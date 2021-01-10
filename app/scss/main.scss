@@ -201,6 +201,9 @@
 	}
 }
 @media (max-width: 576px) {
+	.container {
+		padding: 0 10px;
+	}
 	.main {
 		background: url(../images/dest/main-bg-m.jpg) center no-repeat;
 		background-size: cover;
@@ -214,7 +217,7 @@
 			}
 		}
 		&__subtitle {
-			font-size: 24px;
+			font-size: 20px;
 			margin-top: 25px;
 		}
 		.included {
