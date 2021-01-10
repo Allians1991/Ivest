@@ -8,9 +8,9 @@
 
 // USER VARIABLES SECTION
 
-$accent:     orange; // Accent Color
-$textcolor: #333; // Text Color
-$mainfamily: roboto, sans-serif; // Main Font Family
+$accent:     #ffc600; // Accent Color
+$textcolor: #fff; // Text Color
+$mainfamily: gilroy, sans-serif; // Main Font Family
 $fontsize: 16px;
 
 
@@ -26,10 +26,10 @@ $fontsize: 16px;
 }
 
 
-@include font('roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
-@include font('roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
-@include font('roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2');
-@include font('roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2');
+@include font('gilroy', normal, 400, '../fonts/Gilroy-Regular.woff2');
+@include font('gilroy-bold', normal, 700, '../fonts/Gilroy-Bold.woff2');
+@include font('gilroy', normal, 800, '../fonts/Gilroy-ExtraBold.woff2');
+@include font('gilroy', normal, 900, '../fonts/Gilroy-Black.woff2');
 
 
 // GENERAL DOCUMENT STYLES
@@ -57,6 +57,11 @@ body {
 	font-family: $mainfamily;
 	overflow-x: hidden;
 	color: $textcolor;
+}
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
 }
 
 
