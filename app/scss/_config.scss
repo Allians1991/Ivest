@@ -1,7 +1,7 @@
 // IMPORT SECTION
 
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
-@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+//@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
 // @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
 // @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
 
@@ -12,12 +12,6 @@ $accent:     orange; // Accent Color
 $textcolor: #333; // Text Color
 $mainfamily: roboto, sans-serif; // Main Font Family
 $fontsize: 16px;
-
-
-// Bootstrap compatible gutter variable => $gutter
-
-$grid-gutter-width: 20px;
-$gutter: $grid-gutter-width;
 
 
 // FONTS LOAD SECTION
