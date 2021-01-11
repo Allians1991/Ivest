@@ -205,6 +205,68 @@
 	&__subtitle {
 		font-size: 28px;
 		font-weight: 700;
+		text-align: center;
+	}
+	&__subtitle--left {
+		text-align-last: left;
+	}
+}
+
+// ? Now
+.now {
+	padding-top: 120px;
+	padding-bottom: 160px;
+	background: url(../images/dest/now-bg.jpg) center no-repeat;
+	background-size: cover;
+	&__content {
+		margin: 70px auto 0;
+		width: 900px;
+		background-color: #121212;
+		border-radius: 10px;
+		padding: 18px;
+		box-shadow: 0.813px 1.827px 46.15px 18.85px rgba(0, 0, 0, 0.004);
+	}
+	&__description {
+		padding: 60px 0 60px 125px;
+		border: 1px solid #6e5500;
+		border-radius: 10px;
+		margin-bottom: 0;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 1.7;
+		position: relative;
+		&::before {
+			content: "";
+			display: block;
+			background: url(../images/dest/bitcoin.png) center no-repeat;
+			background-size: cover;
+			width: 241px;
+			height: 144px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: -140px;
+		}
+		&::after {
+			content: "";
+			display: block;
+			background: url(../images/dest/artem-2.png) center no-repeat;
+			background-size: cover;
+			position: absolute;
+			width: 509px;
+			height: 566px;
+			top: 60%;
+			transform: translateY(-50%);
+			right: -190px;
+		}
+		&--accent {
+			color: $accent;
+		}
+	}
+	.btn--now {
+		margin: 0 auto;
+		margin-top: 16px;
+		transform: translateX(-50%);
 	}
 }
 
@@ -225,6 +287,11 @@
 	.main {
 		padding-top: 100px;
 		padding-bottom: 150px;
+	}
+	.now__description::after {
+		width: 431px;
+		height: 480px;
+		right: -120px;
 	}
 }
 @media (max-width: 1200px) {
@@ -250,23 +317,38 @@
 	.problem__list {
 		margin-top: 40px;
 	}
-	
+
 	.problem {
 		padding: 60px 0;
 		&__content {
 			margin-left: 300px;
 		}
-		.heading {
-			&__title {
-				font-size: 35px;
-			}
-			&__subtitle {
-				font-size: 20px;
-			}
-		}
 		&__items {
 			font-size: 16px;
 			margin: 14px 0;
+		}
+	}
+	.now__content {
+		width: 720px;
+	}
+	.now__description {
+		font-size: 16px;
+		&::after {
+			width: 320px;
+			height: 356px;
+			right: -140px;
+			top: 50%;
+		}
+	}
+	.now .btn--now {
+		transform: translateX(-30%);
+	}
+	.heading {
+		&__title {
+			font-size: 35px;
+		}
+		&__subtitle {
+			font-size: 20px;
 		}
 	}
 }
@@ -297,14 +379,6 @@
 		&__content {
 			margin-left: 220px;
 		}
-		.heading {
-			&__title {
-				font-size: 30px;
-			}
-			&__subtitle {
-				font-size: 18px;
-			}
-		}
 		&__items {
 			margin: 10px 0;
 			font-size: 14px;
@@ -312,6 +386,50 @@
 		&__list {
 			margin-top: 20px;
 		}
+	}
+	.now {
+		padding-top: 40px;
+		padding-bottom: 320px;
+		overflow: hidden;
+	}
+	.now__content {
+		margin-top: 100px;
+	}
+	.now__description {
+		padding: 60px;
+	}
+	.now__description::before {
+		top: -50%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 200px;
+		height: 119px;
+	}
+	.now__description::after {
+		right: auto;
+		left: 50%;
+		top: 170%;
+		transform: translateX(-50%);
+	}
+	.now .btn--now {
+		transform: translateX(0);
+	}
+	.heading {
+		&__title {
+			font-size: 30px;
+		}
+		&__subtitle {
+			font-size: 18px;
+		}
+	}
+}
+@media (max-width: 768px) {
+	.now__content {
+		width: 500px;
+	}
+	.now__description {
+		padding: 30px;
+		padding-top: 60px;
 	}
 }
 @media (max-width: 576px) {
@@ -392,5 +510,25 @@
 			margin: 25px 0;
 		}
 	}
-
+	.now__content {
+		width: 280px;
+		padding: 12px;
+	}
+	.now__description {
+		padding: 18px;
+		padding-top: 40px;
+		font-size: 14px;
+		&::before {
+			top: -29%;
+			width: 134px;
+			height: 80px;
+		}
+		&::after {
+			width: 260px;
+			height: 289px;
+		}
+	}
+	.now .btn--now {
+		margin-top: 20px;
+	}
 }
