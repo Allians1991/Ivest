@@ -45,7 +45,7 @@ function scripts() {
 	return src([
 		'node_modules/jquery/dist/jquery.min.js', // (npm i --save-dev jquery) Установлен	по умолочанию
 		//'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js', //(npm i --save-dev magnific-popup) не установлен
-		//'node_modules/slick-carousel/slick/slick.js', //(npm i --save-dev slick-carousel) не установлен
+		'node_modules/slick-carousel/slick/slick.js', //(npm i --save-dev slick-carousel)
 		'app/js/app.js' // app.js. Always at the end
 		])
 	.pipe(concat('app.min.js'))

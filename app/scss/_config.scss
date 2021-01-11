@@ -12,6 +12,7 @@ $accent:     #ffc600; // Accent Color
 $textcolor: #fff; // Text Color
 $mainfamily: gilroy, sans-serif; // Main Font Family
 $fontsize: 16px;
+$hover-shadow: 0px 0px 9.75px 10.25px rgba(255, 197, 0, 0.35);
 
 
 // FONTS LOAD SECTION
@@ -53,10 +54,11 @@ body {
 	font-size: $fontsize;
 	min-width: 320px;
 	position: relative;
-	line-height: 1;
+	line-height: 1.2;
 	font-family: $mainfamily;
 	overflow-x: hidden;
 	color: $textcolor;
+	background-color: #000;
 }
 
 .container {
