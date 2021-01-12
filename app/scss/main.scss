@@ -366,6 +366,7 @@
 	padding: 120px 0;
 	background: url(../images/dest/form-bg.png) center no-repeat;
 	background-size: cover;
+	overflow: hidden;
 	&__content {
 		margin-top: 70px;
 		background-color: rgb(18, 18, 18);
@@ -406,7 +407,7 @@
 
 // ? Reviews
 .reviews {
-	padding: 120px;
+	padding: 120px 0;
 	background: url(../images/dest/reviews-bg.png) center no-repeat;
 	background-size: cover;
 	&__content {
@@ -425,30 +426,32 @@
 		justify-content: center !important;
 		width: 215px !important;
 		opacity: 0;
-		transition: all .5s ease-in-out;
+		transition: all 0.5s ease-in-out;
 		img {
-			opacity: .1;
+			opacity: 0.1;
 		}
 	}
 	.slick-active {
 		opacity: 1 !important;
-		transition: all .5s ease-in-out;
+		transition: all 0.5s ease-in-out;
 		img {
-			opacity: .1 !important;
-			transition: all .5s ease-in-out;
+			opacity: 0.1 !important;
+			transition: all 0.5s ease-in-out;
 		}
 	}
 	.slick-center {
-		transition: all .5s ease-in-out;
+		transition: all 0.5s ease-in-out;
 		img {
 			opacity: 1 !important;
 			z-index: 2;
 		}
 	}
-	.slick-next, .slick-prev {
+	.slick-next,
+	.slick-prev {
 		width: 87px;
 		height: 87px;
 		z-index: 1;
+		top: 42%;
 	}
 	.slick-next {
 		right: 70px;
@@ -456,8 +459,10 @@
 	.slick-prev {
 		left: 70px;
 	}
-	.slick-next:before, .slick-next:before, .slick-prev:before {
-		content: '';
+	.slick-next:before,
+	.slick-next:before,
+	.slick-prev:before {
+		content: "";
 		display: block;
 		width: 87px;
 		height: 87px;
@@ -466,7 +471,6 @@
 	.slick-prev:before {
 		transform: rotate(180deg);
 	}
-	
 }
 
 //? Анимация
@@ -492,6 +496,19 @@
 		height: 480px;
 		right: -120px;
 	}
+	.form {
+		padding-bottom: 80px;
+		&__author {
+			width: 900px;
+			left: 38%;
+		}
+	}
+	.slick-next {
+		right: 40px !important;
+	}
+	.slick-prev {
+		left: 40px !important;
+	}
 }
 @media (max-width: 1200px) {
 	.container {
@@ -505,6 +522,12 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
+			position: relative;
+			.play {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
 		}
 		.included {
 			flex-direction: column;
@@ -556,23 +579,31 @@
 			margin: 20px;
 		}
 	}
+	.form {
+		padding-bottom: 500px;
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+		&__author {
+			left: 50%;
+			transform: translateX(-50%);
+			width: 820px;
+			bottom: -20%;
+		}
+	}
 }
 @media (max-width: 992px) {
 	.main {
 		padding-bottom: 750px;
 		padding-top: 80px;
-	}
-	.play {
 		position: relative;
-		&__wrapp {
-			position: absolute;
-			left: 400px;
-			top: 270px;
-		}
-		&__author {
-			z-index: 1;
-			top: 170px;
-			left: 90px;
+		&__content {
+			position: static;
+			.play {
+				bottom: 27%;
+				left: 59%;
+				right: auto;
+			}
 		}
 	}
 	.btn--top {
@@ -653,8 +684,16 @@
 			font-size: 14px;
 		}
 	}
-	.form {
+	.reviews {
 		padding: 40px 0;
+	}
+	.form {
+		padding-top: 40px;
+		padding-bottom: 460px;
+		&__author {
+			bottom: -14%;
+			width: 680px;
+		}
 	}
 }
 @media (max-width: 768px) {
@@ -675,22 +714,21 @@
 		background: url(../images/dest/form-bg-m.png) center 50px no-repeat;
 		background-size: cover;
 		overflow: hidden;
-		padding-bottom: 350px;
+		padding-bottom: 320px;
 		&__author {
-			left: auto;
-			width: 100%;
-			bottom: -15%;
+			width: 480px;
+			bottom: -12%;
 		}
 	}
 }
 @media (max-width: 576px) {
 	.container {
-		padding: 0;
+		padding: 0 10px;
 	}
 	.main {
 		background: url(../images/dest/main-bg-m.jpg) center no-repeat;
 		background-size: cover;
-		padding-bottom: 435px;
+		padding-bottom: 390px;
 		padding-top: 30px;
 	}
 	.description {
@@ -709,9 +747,8 @@
 		}
 	}
 	.play {
+		bottom: 20% !important;
 		&__wrapp {
-			left: 170px;
-			top: 230px;
 			width: 100px;
 			height: 100px;
 		}
@@ -736,8 +773,8 @@
 		}
 		&__author {
 			z-index: 1;
-			top: 170px;
-			left: 0px;
+			top: -70px;
+			left: -180px;
 			img {
 				max-width: 290px;
 			}
@@ -786,8 +823,16 @@
 		background: url(../images/dest/now2-bg-m.jpg) center no-repeat;
 		background-size: cover;
 	}
+	.slick-next, .slick-prev {
+		display: none;
+		top: auto !important;
+		bottom: 0 !important;
+	}
 	.form {
-		padding-bottom: 200px;
+		.container {
+			padding: 0;
+		}
+		padding-bottom: 240px;
 		&__content {
 			padding: 18px;
 		}
@@ -806,6 +851,7 @@
 		}
 		&__author {
 			bottom: -10%;
+			width: 360px;
 		}
 	}
 }
