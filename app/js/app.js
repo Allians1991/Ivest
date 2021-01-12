@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-	// Custom JS
+	$('.slider').slick({
+		centerMode: true,
+		centerPadding: '60px',
+		slidesToShow: 3,
+		infinite: true,
+		variableWidth: true,
+		dots: true
+	 });
 
 });

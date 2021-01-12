@@ -411,26 +411,63 @@
 	background-size: cover;
 	&__content {
 		text-align: center;
+		margin: 0 auto;
 		margin-top: 60px;
+		// width: 870px;
 	}
-
 	&__item {
+		width: 290px !important;
+		display: flex !important;
+		justify-content: center !important;
 	}
+	.slick-slide {
+		display: flex !important;
+		justify-content: center !important;
+		width: 215px !important;
+		opacity: 0;
+		transition: all .5s ease-in-out;
+		img {
+			opacity: .1;
+		}
+	}
+	.slick-active {
+		opacity: 1 !important;
+		transition: all .5s ease-in-out;
+		img {
+			opacity: .1 !important;
+			transition: all .5s ease-in-out;
+		}
+	}
+	.slick-center {
+		transition: all .5s ease-in-out;
+		img {
+			opacity: 1 !important;
+			z-index: 2;
+		}
+	}
+	.slick-next, .slick-prev {
+		width: 87px;
+		height: 87px;
+		z-index: 1;
+	}
+	.slick-next {
+		right: 70px;
+	}
+	.slick-prev {
+		left: 70px;
+	}
+	.slick-next:before, .slick-next:before, .slick-prev:before {
+		content: '';
+		display: block;
+		width: 87px;
+		height: 87px;
+		background: url(../images/dest/arrow.png) center no-repeat;
+	}
+	.slick-prev:before {
+		transform: rotate(180deg);
+	}
+	
 }
-.container {
-}
-.heading {
-
-	&__title {
-	}
-
-	&__title--accent {
-	}
-
-	&__subtitle {
-	}
-}
-
 
 //? Анимация
 @keyframes border-pulse {
