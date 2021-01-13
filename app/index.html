@@ -7,21 +7,67 @@
 	<title>Грамотные инвестиции</title>
 	<meta name="description" content="Startup HTML template OptimizedHTML 5">
 	<meta name="viewport" content="width=device-width">
-	<link rel="icon" href="img/favicon.png">
+	<link rel="icon" href="images/favicon.png">
 	<meta property="og:image" content="img/dest/preview.jpg">
 	<link rel="stylesheet" href="css/app.min.css">
 
 </head>
 
+	<!-- CUSTOM HTML -->
 <body>
 
-	<!-- CUSTOM HTML -->
-	<section class="main">
+	<!--  Header -->
+	<header class="header">
+		<div class="container">
+			<div class="header__wrap header__wrap--desktop">
+				<div class="nav">
+					<a href="#" data-scroll="#about" class="nav__item">О нас</a>
+					<a href="#" data-scroll="#benefits" class="nav__item">Преимущества</a>
+					<a href="#" data-scroll="#reviews" class="nav__item">Отзывы</a>
+					<a href="#" data-scroll="#rate" class="nav__item">Тарифы</a>
+					<a href="#" data-scroll="#faq" class="nav__item">FAQ</a>
+					<a href="#" data-scroll="#contacts" class="nav__item">Контакты</a>
+				</div>
+				<div class="social">
+					<a href="https://tlgg.ru/89537385366" class="social__item" target="_blank"><img src="images/dest/telegram-dark.png" alt="telegram"></a>
+					<a href="viber://chat?number=79537385366" class="social__item" target="_blank"><img src="images/dest/viber-dark.png" alt="viber"></a>
+					<a href="https://www.instagram.com/artemivin/" class="social__item" target="_blank"><img src="images/dest/insatgram-dark.png" alt="insatgram"></a>
+					<a href="https://vk.com/ivinartem" class="social__item" target="_blank"><img src="images/dest/vk-dark.png" alt="vk"></a>
+					<a href="https://api.whatsapp.com/send?phone=79537385366=" class="social__item" target="_blank"><img src="images/dest/whatsapp-dark.png" alt="whatsapp"></a>
+				</div>
+			</div>
+			<div class="header__wrap header__wrap--mobile">
+				<div class="social">
+					<a href="" class="social__item" target="_blank"><img src="images/dest/telegram-dark.png" alt="telegram"></a>
+					<a href="viber://chat?number=79537385366" class="social__item" target="_blank"><img src="images/dest/viber-dark.png" alt="viber"></a>
+					<a href="https://www.instagram.com/artemivin/" class="social__item" target="_blank"><img src="images/dest/insatgram-dark.png" alt="insatgram"></a>
+					<a href="https://vk.com/ivinartem" class="social__item" target="_blank"><img src="images/dest/vk-dark.png" alt="vk"></a>
+					<a href="" class="social__item" target="_blank"><img src="images/dest/whatsapp-dark.png" alt="whatsapp"></a>
+				</div>
+
+				<a href="#" class="nav_btn" id="nav_btn">
+					<span class="line"></span>
+				</a>
+
+				<div class="nav">
+					<a href="#" data-scroll="#about" class="nav__item">О нас</a>
+					<a href="#" data-scroll="#benefits" class="nav__item">Преимущества</a>
+					<a href="#" data-scroll="#reviews" class="nav__item">Отзывы</a>
+					<a href="#" data-scroll="#rate" class="nav__item">Тарифы</a>
+					<a href="#" data-scroll="#faq" class="nav__item">FAQ</a>
+					<a href="#" data-scroll="#contacts" class="nav__item">Контакты</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!--  Main -->
+	<section class="main" id="about">
 		<div class="container">
 			<div class="main__content">
 				<div class="description">
 					<h1 class="description__title">Грамотные <br>инвестиции</h1>
-					<p class="description__subtitle">Авторский курс Артема Ивина</p>
+					<p class="description__subtitle" id="Ticker">Авторский курс Артема Ивина</p>
 					<div class="included">
 						<ul class="included__list">
 							<li class="included__item">7 индивидуальных занятий</li>
@@ -87,7 +133,7 @@
 	<!-- /.now -->
 
 	<!-- Benefits -->
-	<section class="benefits">
+	<section class="benefits" id="benefits">
 		<div class="container">
 			<div class="heading">
 				<h2 class="heading__title"><span class="heading__title heading__title--accent">П</span>очему</h2>
@@ -145,7 +191,7 @@
 	<!-- /.benefits -->
 
 	<!-- Rate -->
-	<section class="rate">
+	<section class="rate" id="rate">
 		<div class="container">
 			<div class="heading">
 				<p class="heading__subtitle"><span class="heading__title heading__title--accent">В</span>ыберете удобный
@@ -185,7 +231,7 @@
 	<!-- /.rate -->
 
 	<!-- Reviews -->
-	<section class="reviews">
+	<section class="reviews" id="reviews">
 		<div class="container">
 			<div class="heading">
 				<h2 class="heading__title"><span class="heading__title heading__title--accent">Отзывы</span></h2>

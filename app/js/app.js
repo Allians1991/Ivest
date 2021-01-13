@@ -46,4 +46,86 @@ document.addEventListener("DOMContentLoaded", function() {
 		$('.thanks').fadeOut();
 	});
 
+	$(window).on("scroll", function () {
+		var scrolled = $(this).scrollTop();
+		if( scrolled > 1000 ) {
+			$('.header').addClass('scroll');
+		}   
+		if( scrolled <= 1000 ) {     
+			$('.header').removeClass('scroll');
+		}
+	});
+
+
+	/*Burger*/
+	$(".nav_btn").click(function(e) {
+		e.preventDefault();
+		$(this).toggleClass("nav_btn__active");
+		$(".nav").toggleClass("active");
+	});
+
+	$(".nav, .nav__link").click(function(e) {
+		e.preventDefault();
+		$('.nav').removeClass("active");
+		$(".nav_btn").removeClass("nav_btn__active");
+	});
+	$(window).on("scroll", function () {
+		$('.nav').removeClass("active");
+		$(".nav_btn").removeClass("nav_btn__active");
+	});
+
+	// End_____________________________________
+
+	
 });
+
+var CharTimeout = 100; // скорость печатания
+var StoryTimeout = 1500; // время ожидания перед переключением
+
+var Summaries = new Array();
+
+Summaries[0] = 'Авторский курс Артема Ивина';
+Summaries[1] = 'Авторский курс Артема Ивина';
+Summaries[2] = 'Авторский курс Артема Ивина';
+Summaries[3] = 'Авторский курс Артема Ивина';
+
+function startTicker(){
+	massiveItemCount =  Number(Summaries.length); //количество элементов массива
+	// Определяем значения запуска
+	CurrentStory     = -1;
+	CurrentLength    = 0;
+	// Расположение объекта
+	AnchorObject     = document.getElementById("Ticker");
+	runTheTicker();     
+}
+// Основной цикл тиккера
+function runTheTicker(){
+	var myTimeout;  
+	// Переход к следующему элементу
+	if(CurrentLength == 0){
+		CurrentStory++;
+		CurrentStory      = CurrentStory % massiveItemCount;
+		StorySummary      = Summaries[CurrentStory].replace(/"/g,'-');
+	}
+	// Располагаем текущий текст в анкор с печатанием
+	AnchorObject.innerHTML = StorySummary.substring(0,CurrentLength) + znak();
+	// Преобразуем длину для подстроки и определяем таймер
+	if(CurrentLength != StorySummary.length){
+		CurrentLength++;
+		myTimeout = CharTimeout;
+	} else {
+		CurrentLength = 0;
+		myTimeout = StoryTimeout;
+	}
+	// Повторяем цикл с учетом задержки
+	setTimeout("runTheTicker()", myTimeout);
+}
+// Генератор подстановки знака
+function znak(){
+	if(CurrentLength == StorySummary.length) return "";
+	else return "|";
+}
+
+startTicker();
+
+/*----------------------------------*/

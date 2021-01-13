@@ -1,12 +1,67 @@
 @import "config";
 
 // ? Main BLOCK
-@media (max-width: 1200px) {
+
+// ? Header
+.header {
+	background-color: rgba($accent, 1);
+	padding: 18px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+	transition: all .3s;
+	box-shadow: 0px 3px 0px #ff9600;
+	// box-shadow: 0px 0px 9.75px 3.25px rgba(255, 197, 0, 0.65);
+	&.scroll {
+		padding: 10px 0;
+	}
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&--mobile {
+			display: none;
+		}
+		.nav {
+			display: flex;
+			width: 60%;
+			justify-content: space-between;
+			&__item {
+				font-size: 18px;
+				font-weight: 700;
+				color: #000 ;
+				margin: 0 16px;
+				&:first-child {
+					margin-left: 0;
+				}
+				&:last-child {
+					margin-right: 0;
+				}
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
 }
+/* Social Links */
+.social {
+	&__item {
+		display: inline-block;
+		margin: 0 16px;
+		&:first-child {
+			margin-left: 0;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
 .main {
 	background: url(../images/dest/main-bg.jpg) center no-repeat;
 	background-size: cover;
-	padding-top: 165px;
+	padding-top: 235px;
 	padding-bottom: 200px;
 	overflow: hidden;
 	&__content {
@@ -68,6 +123,7 @@
 		position: relative;
 		width: 193px;
 		height: 193px;
+		opacity: 0; //! Временно скрытый блок
 	}
 	&__pulse {
 		width: 193px;
@@ -332,6 +388,11 @@
 		width: 360px;
 		height: 440px;
 		text-align: center;
+		transition: all .2s;
+		&:hover {
+			transform: scale(1.05);
+			box-shadow: $hover-shadow;
+		}
 	}
 	.btn {
 		margin: 0 auto;
@@ -488,7 +549,7 @@
 //? Медиазапросы
 @media (max-width: 1400px) {
 	.main {
-		padding-top: 100px;
+		padding-top: 170px;
 		padding-bottom: 150px;
 	}
 	.now__description::after {
@@ -515,8 +576,11 @@
 		max-width: 1100px;
 		padding: 0 20px;
 	}
+	.header__wrap .nav {
+		width: 63%;
+	}
 	.main {
-		padding-top: 150px;
+		padding-top: 220px;
 		padding-bottom: 150px;
 		&__content {
 			display: flex;
@@ -593,9 +657,93 @@
 	}
 }
 @media (max-width: 992px) {
+	.header__wrap--desktop {
+		display: none;
+	}
+	.header.scroll {
+		padding: 18px 0;
+	}
+	.header__wrap--mobile {
+		display: flex;
+		.nav a {
+			text-transform: uppercase;
+			margin: 0 20px;
+			font-weight: 700;
+			color: #000;
+			margin-bottom: 20px;
+		}
+		.nav_btn {
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			z-index: 1;
+		}
+		.nav_btn .line {
+			display: block;
+			width: 40px;
+			height: 3px;
+			background: #000;
+			transition: all 0.2s ease-in-out;
+			position: relative;
+		}
+		.nav_btn .line::before, .line::after {
+			display: block;
+			position: absolute;
+			content: "";
+			z-index: -1;
+			width: 40px;
+			height: 3px;
+			background: #000;
+			transition: all 0.2s ease-in-out;
+		}
+		.nav_btn .line::before {
+			top: -14px;
+		}
+		.nav_btn .line::after {
+			top: 14px;
+		}
+		.nav {
+			display: flex;
+			flex-direction: column;
+			position: fixed; 
+			top: 0;
+			left: 0;
+			margin: 0 !important;
+			background-color: $accent;
+			width: 100%;
+			padding: 20px;
+			transform: translateY(-100%);
+			transition: all 0.2s;
+		}
+		.nav__item {
+			font-size: 25px;
+		}
+		.nav__item:first-child {
+			margin-left: 20px;
+			margin-top: 20px;
+		}
+		.nav.active {
+			transform: translateY(0);
+		}
+		.nav_btn__active .line {
+			background: none;
+		} 
+		.nav_btn__active .line::before {
+			transform: rotate(-45deg);
+			background: #4c4c4c;
+		}
+		.nav_btn__active .line::after {
+			transform: rotate(45deg);
+			background: #4c4c4c;
+		}
+		.nav_btn__active .line::before,.nav_btn__active .line::after {
+			top: 0px;
+		}
+	}
 	.main {
 		padding-bottom: 750px;
-		padding-top: 80px;
+		padding-top: 150px;
 		position: relative;
 		&__content {
 			position: static;
@@ -725,11 +873,24 @@
 	.container {
 		padding: 0 10px;
 	}
+	.header__wrap--mobile .nav__item {
+		font-size: 18px;
+	}
+	.header.scroll {
+		padding: 14px 0;
+		z-index: 6;
+	}
+	.header {
+		padding: 14px 0;
+	}
+	.social__item {
+		margin: 0 5px;
+	}
 	.main {
 		background: url(../images/dest/main-bg-m.jpg) center no-repeat;
 		background-size: cover;
 		padding-bottom: 390px;
-		padding-top: 30px;
+		padding-top: 100px;
 	}
 	.description {
 		&__title {
