@@ -466,11 +466,11 @@
 			<div class="form__content" id="form">
 				<form action="send.php" method="POST" class="form__wrap">
 					<label for="name" class="form__label">Ваше имя:</label>
-					<input type="text" id="name" name="name" class="form__input" placeholder="Артём Ивин">
+					<input type="text" id="name" name="name" class="form__input" placeholder="Артём Ивин" required>
 					<label for="tel" class="form__label">Ваш телефон:</label>
-					<input type="text" id="tel" name="tel" class="form__input" placeholder="+375 (29) 520-95-09">
+					<input type="text" id="tel" name="tel" class="form__input" placeholder="+375 (29) 520-95-09" required>
 					<label for="email" class="form__label">Ваш E-mail:</label>
-					<input type="text" id="email" name="email" class="form__input" placeholder="example@mail.ru">
+					<input type="text" id="email" name="email" class="form__input" placeholder="example@mail.ru" required>
 					<!-- <input type="button" class="btn form__btn" value="Записаться на курс"> -->
 					<button type="submit" class="btn form__btn">Записаться на курс</button>
 				</form>
@@ -493,16 +493,16 @@
 									alt="phone">+79537385366</a>
 							<a href="mailto:becs@bk.ru" class="mail"><img src="images/dest/mail.png" alt="mail">becs@bk.ru</a>
 							<div class="social">
-								<a href="viber://chat?number=79537385366" class="social__link"><img
-										src="images/dest/viber-dark.png" alt="viber"></a>
-								<a href="https://tlgg.ru/89537385366" class="social__link"><img
-										src="images/dest/telegram-dark.png" alt="telegram"></a>
+								<a href="viber://chat?number=79537385366" class="social__link"><img src="images/dest/viber.png"
+										alt="viber"></a>
+								<a href="https://tlgg.ru/89537385366" class="social__link"><img src="images/dest/telegram.png"
+										alt="telegram"></a>
 								<a href="https://api.whatsapp.com/send?phone=79537385366=" class="social__link"><img
-										src="images/dest/whatsapp-dark.png" alt="whatsapp"></a>
-								<a href="https://vk.com/ivinartem" class="social__link"><img src="images/dest/vk-dark.png"
+										src="images/dest/whatsapp.png" alt="whatsapp"></a>
+								<a href="https://vk.com/ivinartem" class="social__link"><img src="images/dest/vk.png"
 										alt="vk"></a>
 								<a href="https://www.instagram.com/artemivin/" class="social__link"><img
-										src="images/dest/insatgram-dark.png" alt="instagram"></a>
+										src="images/dest/insatgram.png" alt="instagram"></a>
 							</div>
 						</div>
 					</div>
@@ -523,7 +523,8 @@
 						<h3 class="footer__title">Информация</h3>
 						<div class="requisites__block">
 							<ul>
-								<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quis vel deleniti velit maxime non?</li>
+								<li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quis vel deleniti velit
+									maxime non?</li>
 								<li class="politic__link">Политика конфиденциальности</li>
 							</ul>
 						</div>
@@ -540,6 +541,83 @@
 		</div>
 	</footer>
 	<!-- /.footer -->
+
+
+	<!-- Modals -->
+	<div id="politic" class="bg__modal">
+		<div class="modals">
+			<div class="modals__wrap">
+				<a href="#" class="close"><img src="images/dest/close.png" alt="close"></a>
+				<div class="title__block">
+					<h2>Политика конфиденциальности и защиты информации.</h2>
+				</div>
+				<p class="text-center">Оставляя данные на сайте, Вы соглашаетесь с Политикой конфиденциальности и защиты
+					информации.
+
+				<h5>Защита данных</h5>
+
+				<p>Администрация сайта сайт.ru (далее Сайт) не может передать или раскрыть информацию, предоставленную
+					пользователем (далее Пользователь) при регистрации и использовании функций сайта третьим лицам, кроме
+					случаев, описанных законодательством страны, на территории которой пользователь ведет свою деятельность.
+				</p>
+
+				<h5>Получение персональной информации</h5>
+
+				<p>Для коммуникации на сайте пользователь обязан внести некоторую персональную информацию. Для проверки
+					предоставленных данных, сайт оставляет за собой право потребовать доказательства идентичности в онлайн
+					или
+					офлайн режимах.</p>
+
+				<h5>Использование персональной информации</h5>
+
+				<p>Сайт использует личную информацию Пользователя для обслуживания и для улучшения качества предоставляемых
+					услуг. Часть персональной информации может быть предоставлена банку или платежной системе, в случае, если
+					предоставление этой информации обусловлено процедурой перевода средств платежной системе, услугами
+					которой
+					Пользователь желает воспользоваться. Сайт прилагает все усилия для сбережения в сохранности личных данных
+					Пользователя. Личная информация может быть раскрыта в случаях, описанных законодательством, либо когда
+					администрация сочтет подобные действия необходимыми для соблюдения юридической процедуры, судебного
+					распоряжения или легального процесса необходимого для работы Пользователя с Сайтом. В других случаях, ни
+					при
+					каких условиях, информация, которую Пользователь передает Сайту, не будет раскрыта третьим лицам.</p>
+
+				<h5>Коммуникация</h5>
+
+				<p>После того, как Пользователь оставил данные, он получает сообщение, подтверждающее его успешную
+					регистрацию.
+					Пользователь имеет право в любой момент прекратить получение информационных бюллетеней воспользовавшись
+					соответствующим сервисом в Сайте.</p>
+
+				<h5>Ссылки</h5>
+
+				<p> На сайте могут содержаться ссылки на другие сайты. Сайт не несет ответственности за содержание, качество
+					и
+					политику безопасности этих сайтов. Данное заявление о конфиденциальности относится только к информации,
+					размещенной непосредственно на сайте.</p>
+
+				<h5>Безопасность</h5>
+
+				<p>Сайт обеспечивает безопасность учетной записи Пользователя от несанкционированного доступа.</p>
+
+				<h5>Уведомления об изменениях</h5>
+
+				<p>Сайт оставляет за собой право вносить изменения в Политику конфиденциальности без дополнительных
+					уведомлений. Нововведения вступают в силу с момента их опубликования. Пользователи могут отслеживать
+					изменения в Политике конфиденциальности самостоятельно.</p>
+				</p>
+				<a class="close2" href="#">Закрыть</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Thanks popup -->
+	<div class="thanks__popup">
+		<div class="thanks__popup_content">
+			<h3><span>Спасибо.</span>Ваша заявка принята!</h3>
+			<a href="#" class="close__btn"></a>
+		</div>
+	</div>
+	<!-- /.thanks__popup -->
 
 
 	<script src="js/app.min.js"></script>

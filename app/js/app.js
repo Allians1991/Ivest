@@ -41,6 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		return false;
 	});
 
+	
+	$(".close__btn").click(function(e) {
+		e.preventDefault();
+		$('.thanks__popup').fadeOut();
+	});
+
 	$(".close").click(function (e) {
 		e.preventDefault();
 		$('.thanks').fadeOut();
@@ -83,6 +89,24 @@ document.addEventListener("DOMContentLoaded", function () {
 		$('.panel__title').not(this).removeClass('in').next().slideUp(200);
 	});
 	/*END*/
+
+	/*Politic*/
+	$(".politic__link").click(function(e) {
+		e.preventDefault();
+		$('#politic').fadeIn();
+		$('body').css({'overflow-y' : 'hidden'});
+	});
+	$(".close").click(function(e) {
+		e.preventDefault();
+		$('#politic').fadeOut();
+		$('body').css({'overflow-y' : 'scroll'});
+	});
+	$(".close2").click(function(e) {
+		e.preventDefault();
+		$('#politic').fadeOut();
+		$('body').css({'overflow-y' : 'scroll'});
+	});
+	// -----------------------------
 
 
 });
