@@ -9,7 +9,7 @@
 	position: fixed;
 	width: 100%;
 	z-index: 2;
-	transition: all .3s;
+	transition: all 0.3s;
 	box-shadow: 0px 3px 0px #ff9600;
 	// box-shadow: 0px 0px 9.75px 3.25px rgba(255, 197, 0, 0.65);
 	&.scroll {
@@ -29,7 +29,7 @@
 			&__item {
 				font-size: 18px;
 				font-weight: 700;
-				color: #000 ;
+				color: #000;
 				margin: 0 16px;
 				&:first-child {
 					margin-left: 0;
@@ -388,7 +388,7 @@
 		width: 360px;
 		height: 440px;
 		text-align: center;
-		transition: all .2s;
+		transition: all 0.2s;
 		&:hover {
 			transform: scale(1.05);
 			box-shadow: $hover-shadow;
@@ -531,6 +531,168 @@
 	}
 	.slick-prev:before {
 		transform: rotate(180deg);
+	}
+}
+
+// ? FAQ
+.faq {
+	padding: 120px 0;
+	background: url(../images/dest/faq-bg.jpg) center no-repeat;
+	background-size: cover;
+	.accordion {
+		margin-top: 40px;
+		.panel {
+			background-color: #121212;
+			margin-bottom: 15px;
+			border-radius: 10px;
+			box-shadow: 1.813px 1.827px 37.15px 25.85px #000;
+			&__title {
+				background-color: #121212;
+				border-radius: 10px;
+				padding: 18px 0 18px 20px;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				position: relative;
+				justify-content: space-between;
+				a {
+					font-size: 18px;
+					font-weight: 700;
+					color: $accent;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+				&::after {
+					content: "";
+					min-width: 10px;
+					min-height: 10px;
+					display: inline-block;
+					margin-right: 18px;
+					display: inline-block;
+					background: url(../images/dest/open-faq.png) center no-repeat;
+					transition: all 0.3s ease-in-out;
+					background-size: cover;
+				}
+				&.in {
+					&::after {
+						transform: rotate(180deg);
+					}
+				}
+			}
+			&__collapse {
+				display: none;
+				padding: 18px;
+				padding-top: 0;
+				ul {
+					line-height: 21px;
+					list-style: none;
+					font-size: 15px;
+					list-style: square outside;
+					color: #2b8fe4;
+					padding-bottom: 20px;
+					li {
+						padding-left: 5px;
+						margin-bottom: 16px;
+					}
+					li:last-child {
+						margin-bottom: 0;
+					}
+				}
+				p {
+					text-align: left;
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+/* FAQ END*/
+
+// ! Contacts
+/* Footer */
+.footer {
+	padding: 60px 0;
+	&__wrap {
+		.row {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		.requisites .requisites__block {
+			margin-top: 30px;
+		}
+		.requisites ul {
+			list-style: none;
+			font-weight: 700;
+			margin: 0;
+			padding: 0;
+		}
+		.requisites ul li {
+			cursor: pointer;
+			margin-bottom: 20px;
+			display: flex;
+			align-items: center;
+		}
+		.requisites ul li img {
+			margin-right: 15px;
+		}
+		.requisites ul li:hover {
+			color: $accent;
+		}
+		.requisites ul li a {
+			color: #fff;
+		}
+		.pay__block {
+			margin-top: 50px;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.pay__block img {
+			margin-bottom: 20px;
+		}
+		.contacts__block {
+			margin-top: 30px;
+		}
+		.contacts__block a:hover,
+		.requisites ul li a:hover {
+			text-decoration: none;
+			color: $accent;
+		}
+		.contacts__block a:hover img,
+		.thanks__popup_content img:hover {
+			opacity: 1;
+		}
+	}
+	&__title {
+		font-size: 20px;
+		font-weight: 700;
+		color: $accent;
+	}
+	&__block {
+		width: 30%;
+	}
+	&__block {
+		margin-top: 30px;
+		display: flex;
+		flex-direction: column;
+	}
+	a {
+		color: #fff;
+		font-weight: 700;
+		transition: color 0.1s;
+		img {
+			opacity: 0.8;
+			transition: opacity 0.1s;
+			margin-right: 15px;
+		}
+	}
+	.contacts .mail, .footer__wrap .contacts .phone {
+		display: flex;
+		align-items: center;
+		margin-bottom: 25px;
 	}
 }
 
@@ -687,7 +849,8 @@
 			transition: all 0.2s ease-in-out;
 			position: relative;
 		}
-		.nav_btn .line::before, .line::after {
+		.nav_btn .line::before,
+		.line::after {
 			display: block;
 			position: absolute;
 			content: "";
@@ -706,7 +869,7 @@
 		.nav {
 			display: flex;
 			flex-direction: column;
-			position: fixed; 
+			position: fixed;
 			top: 0;
 			left: 0;
 			margin: 0 !important;
@@ -728,7 +891,7 @@
 		}
 		.nav_btn__active .line {
 			background: none;
-		} 
+		}
 		.nav_btn__active .line::before {
 			transform: rotate(-45deg);
 			background: #4c4c4c;
@@ -737,7 +900,8 @@
 			transform: rotate(45deg);
 			background: #4c4c4c;
 		}
-		.nav_btn__active .line::before,.nav_btn__active .line::after {
+		.nav_btn__active .line::before,
+		.nav_btn__active .line::after {
 			top: 0px;
 		}
 	}
@@ -834,6 +998,21 @@
 	}
 	.reviews {
 		padding: 40px 0;
+	}
+	.faq {
+		padding: 40px 0;
+		.accordion {
+			.panel {
+				.panel__title a {
+					font-size: 16px;
+					line-height: 18px;
+				}
+				p {
+					font-size: 14px;
+					line-height: 18px;
+				}
+			}
+		}
 	}
 	.form {
 		padding-top: 40px;
@@ -984,10 +1163,25 @@
 		background: url(../images/dest/now2-bg-m.jpg) center no-repeat;
 		background-size: cover;
 	}
-	.slick-next, .slick-prev {
+	.slick-next,
+	.slick-prev {
 		display: none;
 		top: auto !important;
 		bottom: 0 !important;
+	}
+	.faq {
+		.accordion {
+			.panel {
+				.panel__title a {
+					font-size: 12px;
+					line-height: 14px;
+				}
+				p {
+					font-size: 12px;
+					line-height: 14px;
+				}
+			}
+		}
 	}
 	.form {
 		.container {

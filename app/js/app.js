@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
 	// Slider
 	$('.slider').slick({
@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		infinite: true,
 		variableWidth: true,
 		dots: true
-	 });
+	});
 
 	// Scroll
-	$("[data-scroll]").on("click" , function(event) {
+	$("[data-scroll]").on("click", function (event) {
 		event.preventDefault();
 
 		let elementId = $(this).data('scroll');
@@ -24,15 +24,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		});
 	});
 
-	
+
 	/*Ajax*/
-	$('form').submit(function(event) {
+	$('form').submit(function (event) {
 		event.preventDefault();
 		$.ajax({
 			type: "POST",                     /*Метод отправки*/
 			url: "../send.php",          /*Путь к обработчику*/
 			data: $(this).serialize()
-		}).done(function() {
+		}).done(function () {
 			$(this).find("input").val("");    /*Очистка формы*/
 			// $('#form').fadeOut();      /*Закрытие формы"*/
 			$('.thanks__popup').fadeIn();    /*Модальное окно спасибо*/
@@ -41,30 +41,30 @@ document.addEventListener("DOMContentLoaded", function() {
 		return false;
 	});
 
-	$(".close").click(function(e) {
+	$(".close").click(function (e) {
 		e.preventDefault();
 		$('.thanks').fadeOut();
 	});
 
 	$(window).on("scroll", function () {
 		var scrolled = $(this).scrollTop();
-		if( scrolled > 1000 ) {
+		if (scrolled > 1000) {
 			$('.header').addClass('scroll');
-		}   
-		if( scrolled <= 1000 ) {     
+		}
+		if (scrolled <= 1000) {
 			$('.header').removeClass('scroll');
 		}
 	});
 
 
 	/*Burger*/
-	$(".nav_btn").click(function(e) {
+	$(".nav_btn").click(function (e) {
 		e.preventDefault();
 		$(this).toggleClass("nav_btn__active");
 		$(".nav").toggleClass("active");
 	});
 
-	$(".nav, .nav__link").click(function(e) {
+	$(".nav, .nav__link").click(function (e) {
 		e.preventDefault();
 		$('.nav').removeClass("active");
 		$(".nav_btn").removeClass("nav_btn__active");
@@ -76,9 +76,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// End_____________________________________
 
-	
+	/*Accordion*/
+	$('.panel__title').click(function (e) {
+		e.preventDefault();
+		$(this).toggleClass('in').next().slideToggle(200);
+		$('.panel__title').not(this).removeClass('in').next().slideUp(200);
+	});
+	/*END*/
+
+
 });
 
+
+// AutoPrint
 var CharTimeout = 100; // скорость печатания
 var StoryTimeout = 1500; // время ожидания перед переключением
 
@@ -89,28 +99,28 @@ Summaries[1] = 'Авторский курс Артема Ивина';
 Summaries[2] = 'Авторский курс Артема Ивина';
 Summaries[3] = 'Авторский курс Артема Ивина';
 
-function startTicker(){
-	massiveItemCount =  Number(Summaries.length); //количество элементов массива
+function startTicker() {
+	massiveItemCount = Number(Summaries.length); //количество элементов массива
 	// Определяем значения запуска
-	CurrentStory     = -1;
-	CurrentLength    = 0;
+	CurrentStory = -1;
+	CurrentLength = 0;
 	// Расположение объекта
-	AnchorObject     = document.getElementById("Ticker");
-	runTheTicker();     
+	AnchorObject = document.getElementById("Ticker");
+	runTheTicker();
 }
 // Основной цикл тиккера
-function runTheTicker(){
-	var myTimeout;  
+function runTheTicker() {
+	var myTimeout;
 	// Переход к следующему элементу
-	if(CurrentLength == 0){
+	if (CurrentLength == 0) {
 		CurrentStory++;
-		CurrentStory      = CurrentStory % massiveItemCount;
-		StorySummary      = Summaries[CurrentStory].replace(/"/g,'-');
+		CurrentStory = CurrentStory % massiveItemCount;
+		StorySummary = Summaries[CurrentStory].replace(/"/g, '-');
 	}
 	// Располагаем текущий текст в анкор с печатанием
-	AnchorObject.innerHTML = StorySummary.substring(0,CurrentLength) + znak();
+	AnchorObject.innerHTML = StorySummary.substring(0, CurrentLength) + znak();
 	// Преобразуем длину для подстроки и определяем таймер
-	if(CurrentLength != StorySummary.length){
+	if (CurrentLength != StorySummary.length) {
 		CurrentLength++;
 		myTimeout = CharTimeout;
 	} else {
@@ -121,8 +131,8 @@ function runTheTicker(){
 	setTimeout("runTheTicker()", myTimeout);
 }
 // Генератор подстановки знака
-function znak(){
-	if(CurrentLength == StorySummary.length) return "";
+function znak() {
+	if (CurrentLength == StorySummary.length) return "";
 	else return "|";
 }
 
