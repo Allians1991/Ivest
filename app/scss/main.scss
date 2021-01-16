@@ -457,6 +457,7 @@
 	&__btn {
 		width: 100%;
 		border: none;
+		outline: none;
 	}
 	&__author {
 		position: absolute;
@@ -745,7 +746,19 @@
 .thanks__popup {
 	display: none;
 	position: fixed;
+	background-color: rgba(0,0,0, .5);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.thanks__popup_content {
 	background-color: #121212;
+	color: $textcolor;
+	text-align: center;
+	display: block;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -754,12 +767,6 @@
 	width: 500px;
 	padding: 20px 20px 40px;
 	box-shadow: 1.813px 1.827px 37.15px 25.85px rgba(0, 0, 0, 0.5);
-}
-
-.thanks__popup_content {
-	color: $textcolor;
-	text-align: center;
-	display: block;
 }
 
 .thanks__popup_content h3 {
@@ -1190,38 +1197,72 @@
 	.container {
 		padding: 0 10px;
 	}
+	.btn {
+		padding: 12px 0;
+		width: 220px;
+		font-size: 14px;
+	}
 	.header__wrap--mobile .nav__item {
 		font-size: 18px;
 	}
 	.header.scroll {
-		padding: 14px 0;
+		padding: 0;
 		z-index: 6;
 	}
 	.header {
-		padding: 14px 0;
+		padding: 0;
+	}
+	.header__wrap--mobile .nav_btn .line {
+		width: 30px;
+	}
+	.header__wrap--mobile .nav_btn .line::before {
+		top: -10px;
+		width: 30px;
+	}
+	.header__wrap--mobile .nav_btn .line::after {
+		top: 10px;
+		width: 30px;
+	}
+	
+	.header__wrap--mobile .nav_btn__active .line::before {
+		top: 0;
+	}
+	.header__wrap--mobile .nav_btn__active .line::after {
+		top:0;
 	}
 	.social__item {
 		margin: 0 5px;
+		img {
+			width: 25px;
+			height: 25px;
+		}
 	}
 	.main {
 		background: url(../images/dest/main-bg-m.jpg) center no-repeat;
 		background-size: cover;
 		padding-bottom: 390px;
-		padding-top: 100px;
+		padding-top:45px;
 	}
 	.description {
 		&__title {
-			font-size: 36px;
+			font-size: 30px;
 			&::after {
-				width: 90px;
+				display: none;
 			}
 		}
 		&__subtitle {
-			font-size: 20px;
-			margin-top: 25px;
+			font-size: 16px;
+			margin-top: 5px;
 		}
 		.included {
-			margin-top: 30px;
+			margin-top: 10px;
+			&__item {
+				font-size: 14px;
+			}
+			&__item::before {
+				width: 35px;
+				height: 35px;
+			}
 		}
 	}
 	.play {
@@ -1251,10 +1292,10 @@
 		}
 		&__author {
 			z-index: 1;
-			top: -70px;
-			left: -180px;
+			top: -120px;
+			left: -150px;
 			img {
-				max-width: 290px;
+				max-width: 250px;
 			}
 		}
 	}
