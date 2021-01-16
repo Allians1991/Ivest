@@ -643,15 +643,6 @@
 		.requisites ul li a {
 			color: #fff;
 		}
-		.pay__block {
-			margin-top: 50px;
-			display: flex;
-			justify-content: space-between;
-			flex-wrap: wrap;
-		}
-		.pay__block img {
-			margin-bottom: 20px;
-		}
 		.contacts__block {
 			margin-top: 30px;
 		}
@@ -1150,9 +1141,6 @@
 			margin-bottom: 40px;
 			width: 100%;
 		}
-		.pay__block img {
-			margin: 10px;
-		}
 	}
 	.modals {
 		padding: 20px;
@@ -1357,15 +1345,6 @@
 		&__author {
 			bottom: -10%;
 			width: 360px;
-		}
-	}
-	.footer__wrap {
-		.pay__block img {
-			width: 30%;
-			height: 30%;
-		}
-		.pay__block {
-			margin-top: 0;
 		}
 	}
 	.modals {
