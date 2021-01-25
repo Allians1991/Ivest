@@ -223,7 +223,7 @@
 		justify-content: center;
 	}
 	&__content {
-		margin-left: 350px;
+		margin-left: 500px;
 	}
 
 	&__list {
@@ -268,7 +268,7 @@
 		text-align: center;
 	}
 	&__subtitle--left {
-		text-align-last: left;
+		text-align: left;
 	}
 }
 
@@ -386,9 +386,18 @@
 		border-radius: 31px;
 		max-width: 360px;
 		width: 360px;
-		height: 440px;
+		height: 470px;
 		text-align: center;
 		transition: all 0.2s;
+		.item__price {
+			display: block;
+			margin-top: 10px;
+			&--accent {
+				color: $accent;
+				font-weight: 700;
+				font-size: 20px;
+			}
+		}
 		&:hover {
 			transform: scale(1.05);
 			box-shadow: $hover-shadow;
@@ -403,8 +412,8 @@
 		border: 1px solid #6e5500;
 		border-radius: 31px;
 		padding: 21px;
-		padding-top: 65px;
-		height: 397px;
+		padding-top: 40px;
+		height: 427px;
 	}
 
 	&__title {
@@ -412,7 +421,7 @@
 		font-size: 21px;
 		font-weight: 900;
 		margin-bottom: 54px;
-		height: 46px;
+		height: 60px;
 	}
 
 	&__subtitle {
@@ -461,7 +470,7 @@
 	}
 	&__author {
 		position: absolute;
-		left: 41%;
+		left: 55%;
 		bottom: 0;
 		z-index: 0;
 	}
@@ -513,7 +522,7 @@
 		width: 87px;
 		height: 87px;
 		z-index: 1;
-		top: 42%;
+		top: 50%;
 	}
 	.slick-next {
 		right: 70px;
@@ -824,15 +833,14 @@
 	.form {
 		padding-bottom: 80px;
 		&__author {
-			width: 900px;
-			left: 38%;
+			width: 500px;
 		}
 	}
 	.slick-next {
-		right: 40px !important;
+		right: 25px !important;
 	}
 	.slick-prev {
-		left: 40px !important;
+		left: 25px !important;
 	}
 	.modals {
 		max-width: 100%;
@@ -859,6 +867,10 @@
 				position: absolute;
 				right: 0;
 				bottom: 0;
+				&__author {
+					top: -370px;
+					left: -350px;
+				}
 			}
 		}
 		.included {
@@ -872,7 +884,7 @@
 	.problem {
 		padding: 60px 0;
 		&__content {
-			margin-left: 300px;
+			margin-left: 400px;
 		}
 		&__items {
 			font-size: 16px;
@@ -916,10 +928,13 @@
 		display: flex;
 		justify-content: center;
 		overflow: hidden;
+		&__content {
+			margin: 0 auto;
+			margin-top: 70px;
+		}
 		&__author {
 			left: 50%;
 			transform: translateX(-50%);
-			width: 820px;
 			bottom: -20%;
 		}
 	}
@@ -1015,7 +1030,7 @@
 		}
 	}
 	.main {
-		padding-bottom: 750px;
+		padding-bottom: 100px;
 		padding-top: 150px;
 		position: relative;
 		&__content {
@@ -1024,6 +1039,13 @@
 				bottom: 27%;
 				left: 59%;
 				right: auto;
+				&__author {
+					top: -55px;
+					left: -149px;
+					img {
+						width: 600px;
+					}
+			  }
 			}
 		}
 	}
@@ -1033,7 +1055,7 @@
 	.problem {
 		padding: 40px 0;
 		&__content {
-			margin-left: 220px;
+			margin-left: 330px;
 		}
 		&__items {
 			margin: 10px 0;
@@ -1045,7 +1067,7 @@
 	}
 	.now {
 		padding-top: 40px;
-		padding-bottom: 320px;
+		padding-bottom: 270px;
 		overflow: hidden;
 	}
 	.now__content {
@@ -1055,7 +1077,7 @@
 		padding: 60px;
 	}
 	.now__description::before {
-		top: -50%;
+		top: -20%;
 		left: 50%;
 		transform: translateX(-50%);
 		width: 200px;
@@ -1064,7 +1086,7 @@
 	.now__description::after {
 		right: auto;
 		left: 50%;
-		top: 170%;
+		top: 130%;
 		transform: translateX(-50%);
 	}
 	.now .btn--now {
@@ -1080,6 +1102,9 @@
 	}
 	.benefits {
 		padding-top: 40px;
+		&__content {
+			justify-content: start;
+		}
 	}
 	.rate {
 		&__content {
@@ -1092,11 +1117,12 @@
 			}
 		}
 		&__item {
-			margin: 20px 0;
+			margin: 20px;
 			padding: 20px;
 		}
 		.item__title {
-			height: 10px;
+			height: 46px;
+			font-size: 20px;
 		}
 		.item__subtitle {
 			font-size: 16px;
@@ -1127,8 +1153,7 @@
 		padding-top: 40px;
 		padding-bottom: 460px;
 		&__author {
-			bottom: -14%;
-			width: 680px;
+			bottom: -20%;
 		}
 	}
 	.footer__wrap {
@@ -1165,12 +1190,36 @@
 	}
 }
 @media (max-width: 768px) {
+	.main {
+		padding-bottom: 200px;
+	}
 	.now__content {
 		width: 500px;
 	}
 	.now__description {
 		padding: 30px;
 		padding-top: 60px;
+	}
+	.problem__content {
+		margin-left: 0;
+	}
+	.problem {
+		padding-top: 60px;
+		padding-bottom: 280px;
+		background: url(../images/dest/problem-bg-m.jpg) center no-repeat;
+		background-size: cover;
+		.heading__title {
+			text-align: center;
+		}
+		.heading__subtitle {
+			text-align: center !important;
+		}
+		&__list {
+			margin-top: 60px;
+		}
+		&__items {
+			margin: 25px 0;
+		}
 	}
 	.benefits {
 		&__content {
@@ -1182,10 +1231,10 @@
 		background: url(../images/dest/form-bg-m.png) center 50px no-repeat;
 		background-size: cover;
 		overflow: hidden;
-		padding-bottom: 320px;
+		padding-bottom: 500px;
 		&__author {
 			width: 480px;
-			bottom: -12%;
+			bottom: -15%;
 		}
 	}
 
@@ -1240,7 +1289,7 @@
 	.main {
 		background: url(../images/dest/main-bg-m.jpg) center no-repeat;
 		background-size: cover;
-		padding-bottom: 390px;
+		padding-bottom: 215px;
 		padding-top:45px;
 	}
 	.description {
@@ -1292,33 +1341,15 @@
 		}
 		&__author {
 			z-index: 1;
-			top: -120px;
-			left: -150px;
+			top: 0!important;
+			left: -175px !important;
 			img {
-				max-width: 250px;
+				max-width: 300px;
 			}
 		}
 	}
-	.problem__content {
-		margin-left: 0;
-	}
-	.problem {
-		padding-top: 60px;
-		padding-bottom: 280px;
-		background: url(../images/dest/problem-bg-m.jpg) center no-repeat;
-		background-size: cover;
-		.heading__title {
-			text-align: center;
-		}
-		&__list {
-			margin-top: 60px;
-		}
-		&__items {
-			margin: 25px 0;
-		}
-	}
 	.now__content {
-		width: 280px;
+		width: 300px;
 		padding: 12px;
 	}
 	.now__description {
@@ -1341,12 +1372,38 @@
 	.benefits {
 		background: url(../images/dest/now2-bg-m.jpg) center no-repeat;
 		background-size: cover;
+		&__content {
+			justify-content: center;
+		}
+		&__items {
+			flex-direction: column;
+		}
+		&__text {
+			margin-top: 20px;
+			margin-left: 0;
+			text-align: center;
+		}
 	}
+	.rate {
+		&__item {
+			height: 430px;
+			margin: 20px 0;
+			.item__title {
+				font-size: 16px;
+				text-transform: uppercase;
+				height: 35px;
+			}
+			.item__wrapp {
+				padding: 10px;
+				padding-top: 40px;
+				height: 387px;
+			}
+		}
+	}
+	
 	.slick-next,
 	.slick-prev {
-		display: none;
-		top: auto !important;
-		bottom: 0 !important;
+		display: none !important;
 	}
 	.faq {
 		.accordion {
@@ -1363,10 +1420,10 @@
 		}
 	}
 	.form {
+		padding-bottom: 320px;
 		.container {
 			padding: 0;
 		}
-		padding-bottom: 240px;
 		&__content {
 			padding: 18px;
 		}
@@ -1384,8 +1441,8 @@
 			padding: 15px;
 		}
 		&__author {
-			bottom: -10%;
-			width: 360px;
+			bottom: -12%;
+			width: 300px;
 		}
 	}
 	.modals {
@@ -1409,5 +1466,8 @@
 	}
 	.thanks__popup {
 		width: 100%;
+	}
+	.footer__wrap .requisites ul li {
+		font-size: 12px;
 	}
 }
