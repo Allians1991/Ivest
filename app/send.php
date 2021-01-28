@@ -2,6 +2,7 @@
 $name = htmlspecialchars ($_POST['name']);
 $tel = htmlspecialchars ($_POST['tel']);
 $email = htmlspecialchars ($_POST['email']);
+$tarif = htmlspecialchars ($_POST['tarif']);
 
 // Формируем заголовки письма
 $headers= "MIME-Version: 1.0\r\n";
@@ -13,6 +14,7 @@ $headers .= "Reply-To: arvin@admin.info\r\n";
 $message = "<h3>Запись на курс</h3>
 <p>Имя: $name</p>
 <p>Телефон: $tel</p>
+<p>Выбран тариф: $tarif</p>
 <p>E-mail: $email</p>";
 
 // отсылаем письмо админу

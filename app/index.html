@@ -133,11 +133,11 @@
 				<p class="now__description">
 					<span>-Более 50% годовой доходности стабильно.</span>
 					<span>-6 лет торговли в плюс</span>
-					<span>-На деньги с трейдинга посетил 61 страну.</span>
+					<span class="now__description--accent">-На деньги с трейдинга посетил 61 страну.</span>
 					<span>-Все ученики зарабатывают на бирже</span>
-					<span>
-						<a  class="now__description--accent" href="https://vk.com/away.php?to=https%3A%2F%2Fwww.tinkoff.ru%2Finvest%2Fsocial%2Fprofile%2FArtem_Ivin%2F&el=snippet" target="_blank">-Статистика открыта и говорит сама за себя<br> в отличии от 99% курсов</a>
-					</span>
+					<span><a
+							href="https://vk.com/away.php?to=https%3A%2F%2Fwww.tinkoff.ru%2Finvest%2Fsocial%2Fprofile%2FArtem_Ivin%2F&el=snippet">-Статистика
+							открыта и говорит сама за себя<br> в отличии от 99% курсов</a></span>
 					<span>ПОЛНОСТЬЮ ИНДИВИДУАЛЬНОЕ обучение, <br> где вам ответят на ВАШИ вопросы </span>
 					<span>и обучение на примере ВАШИХ компаний</span>
 					<span>с рекомендациями в РЕАЛЬНОМ ВРЕМЕНИ</span>
@@ -237,7 +237,13 @@
 						<span class="item__desc">Пошагово через демонстрацию экрана я покажу и расскажу как найти,
 							проанализировать технически и фундаментально, купить, и продать акции компании с
 							прибылью. Этот курс позволит тебе стабильно зарабатывать постоянно.</span>
-						<span class="item__price">Цена курса: <span class="item__price--accent">25 000р</span></span>
+						<div class="item__price">
+							<span>Цена курса:</span>
+							<div class="discount">
+								<span class="discount__sale">35 000р</span>
+								<span class="item__price--accent">25 000р</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="rate__item">
@@ -247,7 +253,13 @@
 						<span class="item__desc">Ты сможешь лично задать все вопросы по своему портфелю, стратегии,
 							техническому и фундаментальному анализу или сложной ситуации с конкретной акцией. Или например
 							заполнить пробелы в теме криптовалют или IPO.</span>
-						<span class="item__price">Цена курса: <span class="item__price--accent">3 500р</span></span>
+							<div class="item__price">
+								<span>Цена курса:</span>
+								<div class="discount">
+									<span class="discount__sale">5 000р</span>
+									<span class="item__price--accent">3 500р</span>
+								</div>
+							</div>
 					</div>
 				</div>
 				<div class="rate__item">
@@ -257,7 +269,22 @@
 						<span class="item__desc">Я каждый день выкладываю точки входа и выхода из основных сделок, которые
 							есть у меня в портфеле. Если у тебя нет времени и желания учиться самому, но ты хочешь уже сейчас
 							зарабатывать на фондовом рынке, этот вариант для тебя.</span>
-						<span class="item__price">Цена за 1 месяц: <span class="item__price--accent">1000 р</span></span>
+							<div class="item__price item__price--width">
+								<div class="price__wrapp">
+									<span>Цена за 1 месяц:</span>
+									<div class="discount">
+										<span class="item__price--accent">1 000р</span>
+									</div>
+								</div>
+								
+								<br>
+								<div class="price__wrapp">
+									<span>Цена за 1 год:</span>
+									<div class="discount">
+										<span class="item__price--accent item__price--margin">10 000р</span>
+									</div>
+								</div>
+							</div>
 					</div>
 				</div>
 			</div>
@@ -299,7 +326,6 @@
 	</section>
 	<!-- /.review -->
 
-	<!-- FAQ -->
 	<section class="faq" id="faq">
 		<div class="container">
 			<div class="heading">
@@ -445,7 +471,20 @@
 					<input type="text" id="tel" name="tel" class="form__input" placeholder="+79537777777" required>
 					<label for="email" class="form__label">Ваш E-mail:</label>
 					<input type="text" id="email" name="email" class="form__input" placeholder="example@mail.ru" required>
-					<!-- <input type="button" class="btn form__btn" value="Записаться на курс"> -->
+					<label for="tarif" class="form__label">Выбор тарифа:</label>
+					<select name="tarif" id="tarif" class="form__input">
+						<option value="Индивидуальный курс">Индивидуальный курс</option>
+						<option value="1 Индивидуальная консультация по SKYPE">1 индивидуальная консультация по SKYPE</option>
+						<option value="Сигналы на покупку и продажу акций 1 месяц">Сигналы на покупку и продажу акций 1 месяц
+						</option>
+						<option value="Сигналы на покупку и продажу акций 1 год">Сигналы на покупку и продажу акций 1 год
+						</option>
+					</select>
+					<div class="form__personal">
+						<input type="checkbox" name="personal" required>
+						<label for="tarif" class="form__label">Согласен(а) на <a href="#" class="personal__link">обработку
+								персональных данных</a></label>
+					</div>
 					<button type="submit" class="btn form__btn">Записаться на курс</button>
 				</form>
 			</div>
@@ -498,7 +537,7 @@
 							<ul>
 								<li>
 									Рынок – это механизм передачи денег от нетерпеливых к терпеливым (Уоррен Баффет) </li>
-								<li class="politic__link"><a href="#">Политика конфиденциальности</a></li>
+								<li class="politic__link">Политика конфиденциальности</li>
 							</ul>
 						</div>
 					</div>
@@ -510,6 +549,7 @@
 
 
 	<!-- Modals -->
+	<!-- Politic -->
 	<div id="politic" class="bg__modal">
 		<div class="modals">
 			<div class="modals__wrap">
@@ -570,6 +610,59 @@
 				<p>Сайт оставляет за собой право вносить изменения в Политику конфиденциальности без дополнительных
 					уведомлений. Нововведения вступают в силу с момента их опубликования. Пользователи могут отслеживать
 					изменения в Политике конфиденциальности самостоятельно.</p>
+				</p>
+				<a class="close2" href="#">Закрыть</a>
+			</div>
+		</div>
+	</div>
+	<!-- Modals -->
+	<!-- Personal -->
+	<div id="personal" class="bg__modal">
+		<div class="modals">
+			<div class="modals__wrap">
+				<a href="#" class="close"><img src="images/dest/close.png" alt="close"></a>
+				<div class="title__block">
+				</div>
+				<p class="text-center">
+					Предоставляя свои персональные данные Вы даёте согласие на обработку, хранение и использование своих
+					персональных данных на основании ФЗ № 152-ФЗ «О персональных данных» от 27.07.2006 г. в следующих целях:
+				</p>
+				<p class="text-center">
+					<br>Регистрации Пользователя на сайте
+					<br>Осуществление клиентской поддержки
+					<br>Получения Пользователем информации о маркетинговых событиях
+					<br>Выполнение Продавцом обязательств перед Покупателем
+					<br>Проведения аудита и прочих внутренних исследований с целью повышения качества предоставляемых услуг.
+				<p class="text-center">
+					Под персональными данными подразумевается любая информация личного характера, позволяющая установить
+					личность Покупателя такая как:
+
+					Фамилия, Имя, Отчество
+					Дата рождения
+					Контактный телефон
+					Адрес электронной почты
+					Почтовый адрес
+				</p>
+				<p class="text-center">
+					Персональные данные Покупателей хранятся исключительно на электронных носителях и обрабатываются с
+					использованием автоматизированных систем, за исключением случаев, когда неавтоматизированная обработка
+					персональных данных необходима в связи с исполнением требований законодательства.
+				<p class="text-center">
+					Продавец обязуется не передавать полученные персональные данные третьим лицам, за исключением следующих
+					случаев:
+				</p>
+				<p class="text-center">
+					По запросам уполномоченных органов государственной власти РФ только по основаниям и в порядке,
+					установленным законодательством РФ
+					Стратегическим партнерам, которые работают с Продавцом для предоставления продуктов и услуг, или тем из
+					них, которые помогают Продавцу реализовывать продукты и услуги потребителям. Мы предоставляем третьим
+					лицам минимальный объем персональных данных, необходимый только для оказания требуемой услуги или
+					проведения необходимой транзакции.
+				</p>
+				<p class="text-center">
+					Продавец оставляет за собой право вносить изменения в одностороннем порядке в настоящие правила, при
+					условии, что изменения не противоречат действующему законодательству РФ. Изменения условий настоящих
+					правил вступают в силу после их публикации на Сайте.
 				</p>
 				<a class="close2" href="#">Закрыть</a>
 			</div>

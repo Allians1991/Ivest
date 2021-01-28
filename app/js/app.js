@@ -106,6 +106,22 @@ document.addEventListener("DOMContentLoaded", function () {
 		$('#politic').fadeOut();
 		$('body').css({'overflow-y' : 'scroll'});
 	});
+	$(".personal__link").click(function(e) {
+		e.preventDefault();
+		$('#personal').fadeIn();
+		$('body').css({'overflow-y' : 'hidden'});
+		$('#personal').css({'overflow-y' : 'scroll'});
+	});
+	$(".close").click(function(e) {
+		e.preventDefault();
+		$('#personal').fadeOut();
+		$('body').css({'overflow-y' : 'scroll'});
+	});
+	$(".close2").click(function(e) {
+		e.preventDefault();
+		$('#personal').fadeOut();
+		$('body').css({'overflow-y' : 'scroll'});
+	});
 	// -----------------------------
 
 
