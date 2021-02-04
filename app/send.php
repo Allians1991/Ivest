@@ -18,7 +18,7 @@ $message = "<h3>Запись на курс</h3>
 <p>E-mail: $email</p>";
 
 // отсылаем письмо админу
-mail( "becs@bk.ru", "Заявка с artemeivin.ru", $message, $headers );
-// mail( "allians19@yandex.ru", "Заявка с artemeivin.ru", $message, $headers );
+// mail( "becs@bk.ru", "Заявка с artemeivin.ru", $message, $headers );
+mail( "allians19@yandex.ru", "Заявка с artemeivin.ru", $message, $headers );
 
 ?>

@@ -89,7 +89,7 @@
 							<li class="included__item">Торговые сигналы по акциям</li>
 						</ul>
 					</div>
-					<a href="#" class="btn btn--top" data-scroll="#form">Записаться на курс</a>
+					<a href="#" class="btn btn--top" id="callForm">Записаться на курс</a>
 				</div>
 				<div class="play">
 					<div class="play__wrapp">
@@ -241,6 +241,7 @@
 						<span class="item__desc">Пошагово через демонстрацию экрана я покажу и расскажу как найти,
 							проанализировать технически и фундаментально, купить, и продать акции компании с
 							прибылью. Этот курс позволит тебе стабильно зарабатывать постоянно.</span>
+							<span class="rate__more" id="callMore1">Подробнее</span>
 						<div class="item__price">
 							<span>Цена курса:</span>
 							<div class="discount">
@@ -257,6 +258,7 @@
 						<span class="item__desc">Ты сможешь лично задать все вопросы по своему портфелю, стратегии,
 							техническому и фундаментальному анализу или сложной ситуации с конкретной акцией. Или например
 							заполнить пробелы в теме криптовалют или IPO.</span>
+							<span class="rate__more" id="callMore2">Подробнее</span>
 						<div class="item__price">
 							<span>Цена курса:</span>
 							<div class="discount">
@@ -273,6 +275,7 @@
 						<span class="item__desc">Я каждый день выкладываю точки входа и выхода из основных сделок, которые
 							есть у меня в портфеле. Если у тебя нет времени и желания учиться самому, но ты хочешь уже сейчас
 							зарабатывать на фондовом рынке, этот вариант для тебя.</span>
+							<span class="rate__more" id="callMore3">Подробнее</span>
 						<div class="item__price item__price--width">
 							<div class="price__wrapp">
 								<span>Цена за 1 месяц:</span>
@@ -307,22 +310,48 @@
 			</div>
 			<div class="reviews__content slider">
 				<div class="reviews__item">
-					<img src="images/dest/reviews-3.png" alt="reviews">
+					<img src="images/dest/stat1.jpg" alt="stat">
 				</div>
 				<div class="reviews__item">
-					<img src="images/dest/reviews-4.png" alt="reviews">
+					<img src="images/dest/stat2.jpg" alt="stat">
 				</div>
 				<div class="reviews__item">
-					<img src="images/dest/reviews-5.png" alt="reviews">
+					<img src="images/dest/stat3.jpg" alt="stat">
 				</div>
 				<div class="reviews__item">
-					<img src="images/dest/reviews-6.png" alt="reviews">
+					<img src="images/dest/stat4.jpg" alt="stat">
 				</div>
 				<div class="reviews__item">
-					<img src="images/dest/reviews-7.png" alt="reviews">
+					<img src="images/dest/stat5.jpg" alt="stat">
 				</div>
 				<div class="reviews__item">
-					<img src="images/dest/reviews-8.png" alt="reviews">
+					<img src="images/dest/stat6.jpg" alt="stat">
+				</div>
+				<div class="reviews__item">
+					<img src="images/dest/stat7.jpg" alt="stat">
+				</div>
+			</div>
+			<div class="reviews__content slider">
+				<div class="reviews__item">
+					<img src="images/dest/rev1.jpg" alt="reviews">
+				</div>
+				<div class="reviews__item">
+					<img src="images/dest/rev2.jpg" alt="reviews">
+				</div>
+				<div class="reviews__item">
+					<img src="images/dest/rev3.jpg" alt="reviews">
+				</div>
+				<div class="reviews__item">
+					<img src="images/dest/rev4.jpg" alt="reviews">
+				</div>
+				<div class="reviews__item">
+					<img src="images/dest/rev5.jpg" alt="reviews">
+				</div>
+				<div class="reviews__item">
+					<img src="images/dest/rev6.jpg" alt="reviews">
+				</div>
+				<div class="reviews__item">
+					<img src="images/dest/rev7.jpg" alt="reviews">
 				</div>
 			</div>
 
@@ -479,13 +508,13 @@
 					<div class="select" data-state="">
 						<div class="select__title" data-default="Option 0">Индивидуальный курс</div>
 						<div class="select__content">
-						  <input id="singleSelect0" class="select__input" type="radio" name="tarif" checked />
+						  <input id="singleSelect0" class="select__input" type="radio" value="Индивидуальный курс" name="tarif" checked />
 						  <label for="singleSelect0" class="select__label">Индивидуальный курс</label>
-						  <input id="singleSelect1" class="select__input" type="radio" name="tarif"/>
+						  <input id="singleSelect1" class="select__input" type="radio" value="Индивидуальная консультация"  name="tarif"/>
 						  <label for="singleSelect1" class="select__label">Индивидуальная консультация</label>
-						  <input id="singleSelect2" class="select__input" type="radio" name="tarif"/>
+						  <input id="singleSelect2" class="select__input" type="radio" value="Сигналы 1 месяц" name="tarif"/>
 						  <label for="singleSelect2" class="select__label">Сигналы 1 месяц</label>
-						  <input id="singleSelect3" class="select__input" type="radio" name="tarif"/>
+						  <input id="singleSelect3" class="select__input" type="radio" value="Сигналы 1 год" name="tarif"/>
 						  <label for="singleSelect3" class="select__label">Сигналы 1 год</label>
 						</div>
 					 </div>
@@ -676,6 +705,88 @@
 				</p>
 				<a class="close2" href="#">Закрыть</a>
 			</div>
+		</div>
+	</div>
+
+	<!-- More -->
+	<div id="more1" class="bg__modal more">
+		<div class="modals">
+			<div class="modals__wrap">
+				<a href="#" class="close"><img src="images/dest/close.png" alt="close"></a>
+				<div class="title__block">
+					<h4 class="more__title">Индивидуальный курс технического и фундаментального анализа</h4>
+				</div>
+				<p>
+					Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Вскоре осталось ведущими текстами взобравшись, за пустился мир рекламных продолжил свой своих что он. Встретил, маленькая? Большой домах если страна.
+				</p>
+				<a class="close2" href="#">Закрыть</a>
+			</div>
+		</div>
+	</div>
+	<div id="more2" class="bg__modal more">
+		<div class="modals">
+			<div class="modals__wrap">
+				<a href="#" class="close"><img src="images/dest/close.png" alt="close"></a>
+				<div class="title__block">
+					<h4 class="more__title">1 Индивидуальная консультация по SKYPE, 60 минут</h4>
+					
+				</div>
+				<p>
+					Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Вскоре осталось ведущими текстами взобравшись, за пустился мир рекламных продолжил свой своих что он. Встретил, маленькая? Большой домах если страна.
+				</p>
+				<a class="close2" href="#">Закрыть</a>
+			</div>
+		</div>
+	</div>
+	<div id="more3" class="bg__modal more">
+		<div class="modals">
+			<div class="modals__wrap">
+				<a href="#" class="close"><img src="images/dest/close.png" alt="close"></a>
+				<div class="title__block">
+					<h4 class="more__title">Сигналы на покупку и продажу акций</h4>
+				</div>
+				<p>
+					Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Вскоре осталось ведущими текстами взобравшись, за пустился мир рекламных продолжил свой своих что он. Встретил, маленькая? Большой домах если страна.
+				</p>
+				<a class="close2" href="#">Закрыть</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Form_popup -->
+	<div id="popup_form" class="bg__modal">
+		<div class="modals form">
+			<a href="#" class="close"><img src="images/dest/close.png" alt="close"></a>
+				<div class="form__content" id="form">
+					<form action="#" id="form__send" method="POST" class="form__wrap">
+						<label for="name" class="form__label">Ваше имя:</label>
+						<input type="text" id="name" name="name" class="form__input _req _name" placeholder="Артём Ивин">
+						<label for="tel" class="form__label">Ваш телефон:</label>
+						<input type="text" id="tel" name="tel" class="form__input _req _phone" placeholder="+79537777777">
+						<label for="email" class="form__label">Ваш E-mail:</label>
+						<input type="text" id="email" name="email" class="form__input _req _email" placeholder="example@mail.ru">
+						<label for="tarif" class="form__label">Выбор тарифа:</label>
+						<div class="select">
+							<div class="select__title" data-default="Option 0">Индивидуальный курс</div>
+							<div class="select__content">
+							  <input id="singleSelect0" class="select__input" type="radio" value="Индивидуальный курс" name="tarif" checked />
+							  <label for="singleSelect0" class="select__label">Индивидуальный курс</label>
+							  <input id="singleSelect1" class="select__input" type="radio" value="Индивидуальная консультация"  name="tarif"/>
+							  <label for="singleSelect1" class="select__label">Индивидуальная консультация</label>
+							  <input id="singleSelect2" class="select__input" type="radio" value="Сигналы 1 месяц" name="tarif"/>
+							  <label for="singleSelect2" class="select__label">Сигналы 1 месяц</label>
+							  <input id="singleSelect3" class="select__input" type="radio" value="Сигналы 1 год" name="tarif"/>
+							  <label for="singleSelect3" class="select__label">Сигналы 1 год</label>
+							</div>
+						 </div>
+						<div class="personal">
+							<input type="checkbox" id="personal" checked name="personal" class="personal__checkbox _req"">
+							<label for="personal" class="personal__label"><span>	Согласен(а) на <a href="#" class="personal__link">обработку
+								персональных данных</a></span></label>
+						</div>
+						<button type="submit" class="btn form__btn">Записаться на курс</button>
+					</form>
+				</div>
 		</div>
 	</div>
 

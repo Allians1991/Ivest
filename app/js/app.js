@@ -124,6 +124,65 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 	// -----------------------------
 
+	// More 
+	$("#callMore1").click(function (e) {
+		e.preventDefault();
+		$('#more1').fadeIn();
+		$('body').css({ 'overflow-y': 'hidden' });
+	});
+	$(".close").click(function (e) {
+		e.preventDefault();
+		$('#more1').fadeOut();
+		$('body').css({ 'overflow-y': 'scroll' });
+	});
+	$(".close2").click(function (e) {
+		e.preventDefault();
+		$('#more1').fadeOut();
+		$('body').css({ 'overflow-y': 'scroll' });
+	});
+	$("#callMore2").click(function (e) {
+		e.preventDefault();
+		$('#more2').fadeIn();
+		$('body').css({ 'overflow-y': 'hidden' });
+	});
+	$(".close").click(function (e) {
+		e.preventDefault();
+		$('#more2').fadeOut();
+		$('body').css({ 'overflow-y': 'scroll' });
+	});
+	$(".close2").click(function (e) {
+		e.preventDefault();
+		$('#more2').fadeOut();
+		$('body').css({ 'overflow-y': 'scroll' });
+	});
+	$("#callMore3").click(function (e) {
+		e.preventDefault();
+		$('#more3').fadeIn();
+		$('body').css({ 'overflow-y': 'hidden' });
+	});
+	$(".close").click(function (e) {
+		e.preventDefault();
+		$('#more3').fadeOut();
+		$('body').css({ 'overflow-y': 'scroll' });
+	});
+	$(".close2").click(function (e) {
+		e.preventDefault();
+		$('#more3').fadeOut();
+		$('body').css({ 'overflow-y': 'scroll' });
+	});
+
+
+	$("#callForm").click(function (e) {
+		e.preventDefault();
+		$('#popup_form').fadeIn();
+		$('body').css({ 'overflow-y': 'hidden' });
+	});
+	$(".close").click(function (e) {
+		e.preventDefault();
+		$('#popup_form').fadeOut();
+		$('body').css({ 'overflow-y': 'scroll' });
+	});
+	
 
 	// Валидация формы
 	const form = document.getElementById('form__send');
