@@ -140,7 +140,7 @@
 					<span>-На деньги с трейдинга посетил 61 страну.</span>
 					<span>-Все ученики зарабатывают на бирже</span>
 					<span><a class="now__description--accent"
-							href="https://vk.com/away.php?to=https%3A%2F%2Fwww.tinkoff.ru%2Finvest%2Fsocial%2Fprofile%2FArtem_Ivin%2F&el=snippet">-Статистика
+							href="https://vk.com/away.php?to=https%3A%2F%2Fwww.tinkoff.ru%2Finvest%2Fsocial%2Fprofile%2FArtem_Ivin%2F&el=snippet" target="_blank">-Статистика
 							открыта и говорит сама за себя<br> в отличии от 99% курсов</a></span>
 					<span>ПОЛНОСТЬЮ ИНДИВИДУАЛЬНОЕ обучение, <br> где вам ответят на ВАШИ вопросы </span>
 					<span>и обучение на примере ВАШИХ компаний</span>
@@ -468,26 +468,31 @@
 					он будет сыт всю жизнь. Конфуций</p>
 			</div>
 			<div class="form__content" id="form">
-				<form action="#" method="POST" class="form__wrap">
+				<form action="#" id="form__send" method="POST" class="form__wrap">
 					<label for="name" class="form__label">Ваше имя:</label>
-					<input type="text" id="name" name="name" class="form__input" placeholder="Артём Ивин" required>
+					<input type="text" id="name" name="name" class="form__input _req _name" placeholder="Артём Ивин">
 					<label for="tel" class="form__label">Ваш телефон:</label>
-					<input type="text" id="tel" name="tel" class="form__input" placeholder="+79537777777" required>
+					<input type="text" id="tel" name="tel" class="form__input _req _phone" placeholder="+79537777777">
 					<label for="email" class="form__label">Ваш E-mail:</label>
-					<input type="text" id="email" name="email" class="form__input" placeholder="example@mail.ru" required>
+					<input type="text" id="email" name="email" class="form__input _req _email" placeholder="example@mail.ru">
 					<label for="tarif" class="form__label">Выбор тарифа:</label>
-					<select name="tarif" id="tarif" class="form__input">
-						<option value="Индивидуальный курс">Индивидуальный курс</option>
-						<option value="1 Индивидуальная консультация по SKYPE">1 индивидуальная консультация по SKYPE</option>
-						<option value="Сигналы на покупку и продажу акций 1 месяц">Сигналы на покупку и продажу акций 1 месяц
-						</option>
-						<option value="Сигналы на покупку и продажу акций 1 год">Сигналы на покупку и продажу акций 1 год
-						</option>
-					</select>
-					<div class="form__personal">
-						<input type="checkbox" name="personal" required>
-						<label for="tarif" class="form__label">Согласен(а) на <a href="#" class="personal__link">обработку
-								персональных данных</a></label>
+					<div class="select" data-state="">
+						<div class="select__title" data-default="Option 0">Индивидуальный курс</div>
+						<div class="select__content">
+						  <input id="singleSelect0" class="select__input" type="radio" name="tarif" checked />
+						  <label for="singleSelect0" class="select__label">Индивидуальный курс</label>
+						  <input id="singleSelect1" class="select__input" type="radio" name="tarif"/>
+						  <label for="singleSelect1" class="select__label">Индивидуальная консультация</label>
+						  <input id="singleSelect2" class="select__input" type="radio" name="tarif"/>
+						  <label for="singleSelect2" class="select__label">Сигналы 1 месяц</label>
+						  <input id="singleSelect3" class="select__input" type="radio" name="tarif"/>
+						  <label for="singleSelect3" class="select__label">Сигналы 1 год</label>
+						</div>
+					 </div>
+					<div class="personal">
+						<input type="checkbox" id="personal" checked name="personal" class="personal__checkbox _req"">
+						<label for="personal" class="personal__label"><span>	Согласен(а) на <a href="#" class="personal__link">обработку
+							персональных данных</a></span></label>
 					</div>
 					<button type="submit" class="btn form__btn">Записаться на курс</button>
 				</form>
@@ -512,11 +517,11 @@
 							<div class="social">
 
 
-								<a href="https://api.whatsapp.com/send?phone=79537385366=" class="social__link"><img
+								<a href="https://api.whatsapp.com/send?phone=79537385366=" class="social__link" target="_blank"><img
 										src="images/dest/whatsapp.png" alt="whatsapp"></a>
-								<a href="https://vk.com/ivinartem" class="social__link"><img src="images/dest/vk.png"
+								<a href="https://vk.com/ivinartem" class="social__link" target="_blank"><img src="images/dest/vk.png"
 										alt="vk"></a>
-								<a href="https://www.instagram.com/arteminvesting/" class="social__link"><img
+								<a href="https://www.instagram.com/arteminvesting/" class="social__link" target="_blank"><img
 										src="images/dest/insatgram.png" alt="instagram"></a>
 							</div>
 						</div>
@@ -620,6 +625,7 @@
 		</div>
 	</div>
 	<!-- Modals -->
+
 	<!-- Personal -->
 	<div id="personal" class="bg__modal">
 		<div class="modals">
@@ -677,7 +683,7 @@
 
 	<div class="thanks__popup">
 		<div class="thanks__popup_content">
-			<h3><span>Спасибо.</span>Ваша заявка принята!</h3>
+			<h3><span>Ваша заявка принята!</span>Мы с свяжемся Вами  ближайшее время</h3>
 			<a href="#" class="close__btn"></a>
 		</div>
 	</div>

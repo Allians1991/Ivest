@@ -1,6 +1,5 @@
 @import "config";
 
-
 a {
 	color: $textcolor;
 	cursor: pointer;
@@ -38,6 +37,21 @@ a {
 				font-weight: 700;
 				color: #000;
 				margin: 0 16px;
+				transition: opacity 0.2s;
+				&::after {
+					content: "";
+					display: block;
+					width: 100%;
+					height: 2px;
+					background-color: #000000;
+					opacity: 0;
+				}
+				&:hover {
+					opacity: 0.7;
+					&::after {
+						opacity: 0.7;
+					}
+				}
 				&:first-child {
 					margin-left: 0;
 				}
@@ -56,6 +70,9 @@ a {
 	&__item {
 		display: inline-block;
 		margin: 0 16px;
+		&:hover {
+			opacity: 0.6;
+		}
 		&:first-child {
 			margin-left: 0;
 		}
@@ -289,17 +306,16 @@ a {
 	background: url(../images/dest/now-bg.jpg) center no-repeat;
 	background-size: cover;
 	&__content {
-		margin: 70px auto 0;
-		width: 900px;
+		margin: 120px auto 0;
+		width: 800px;
 		background-color: #121212;
 		border-radius: 10px;
 		padding: 18px;
 		box-shadow: 1.813px 1.827px 37.15px 25.85px rgba(0, 0, 0, 1);
+		transform: translateX(-8%);
 	}
 	&__description {
-		padding: 60px 0 60px 125px;
-		border: 1px solid #6e5500;
-		border-radius: 10px;
+		padding: 40px;
 		margin-bottom: 0;
 		font-size: 18px;
 		font-weight: 700;
@@ -307,18 +323,6 @@ a {
 		position: relative;
 		span {
 			display: block;
-		}
-		&::before {
-			content: "";
-			display: block;
-			background: url(../images/dest/bitcoin.png) center no-repeat;
-			background-size: cover;
-			width: 241px;
-			height: 144px;
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			left: -140px;
 		}
 		&::after {
 			content: "";
@@ -328,9 +332,9 @@ a {
 			position: absolute;
 			width: 509px;
 			height: 566px;
-			top: 60%;
+			top: 45%;
 			transform: translateY(-50%);
-			right: -190px;
+			right: -210px;
 		}
 		&--accent {
 			color: $accent;
@@ -338,8 +342,7 @@ a {
 	}
 	.btn--now {
 		margin: 0 auto;
-		margin-top: 16px;
-		transform: translateX(-50%);
+		margin-top: 80px;
 	}
 }
 
@@ -362,6 +365,8 @@ a {
 	&__text {
 		margin: 0;
 		margin-left: 25px;
+		font-size: 18px;
+		font-weight: 700;
 	}
 
 	&__text--accent {
@@ -408,7 +413,7 @@ a {
 			width: 100%;
 			bottom: 15px;
 			left: 50%;
-			transform:translateX(-50%);
+			transform: translateX(-50%);
 			&--width {
 				width: 200px;
 				justify-content: start;
@@ -433,7 +438,7 @@ a {
 					font-size: 12px;
 					position: relative;
 					&::after {
-						content: '';
+						content: "";
 						display: block;
 						width: 100%;
 						height: 1px;
@@ -512,22 +517,67 @@ a {
 		border-radius: 10px;
 		margin-bottom: 30px;
 		outline: none;
+		transition: all 0.2s;
+		&:focus {
+			box-shadow: 0 0 15px $accent;
+		}
+		&._error {
+			box-shadow: 0 0 15px red;
+		}
 	}
-	&__personal {
+	.personal {
 		display: flex;
 		align-items: flex-end;
 		margin-bottom: 40px;
+		margin-top: 20px;
 		line-height: 1;
-		label {
+		&__checkbox {
+			display: none;
+		}
+		&._error {
+			.personal__label::before {
+				box-shadow: 0 0 15px red;
+			}
+		}
+		&__label {
 			font-size: 12px;
 			margin: 0;
-			margin-left: 10px;
+			font-weight: 700;
+			display: inline-flex;
+			align-items: center;
+			position: relative;
 			a {
 				color: $accent;
 				text-decoration: underline;
 			}
+			&::before {
+				content: "";
+				align-self: flex-start;
+				flex: 0 0 18px;
+				height: 18px;
+				background-color: #fff;
+				border-radius: 4px;
+				margin-right: 5px;
+			}
+			&::after {
+				transition: all 0.1s;
+				content: "";
+				background-color: $accent;
+				width: 12px;
+				height: 12px;
+				border-radius: 4px;
+				top: 3px;
+				left: 3px;
+				position: absolute;
+				transform: scale(0);
+			}
 		}
 	}
+
+	.personal__checkbox:checked + .personal__label::after {
+		transform: scale(1);
+	}
+
 	&__btn {
 		width: 100%;
 		border: none;
@@ -539,6 +589,112 @@ a {
 		bottom: 0;
 		z-index: 0;
 	}
+	// Select Style
+	.select {
+		position: relative;
+		width: 100%;
+		border: none;
+		margin: 0 auto;
+		background-color: #ffffff;
+		color: #333;
+		border-radius: 10px;
+	 
+		&[data-state="active"] {
+		  .select__title {
+			 &::before {
+				transform: translate(-3px, -50%) rotate(-45deg);
+			 }
+	 
+			 &::after {
+				transform: translate(3px, -50%) rotate(45deg);
+			 }
+		  }
+		  
+		  .select__content {
+			 display: block;
+		  }
+		  
+		  .select__label + .select__input + .select__label {
+			 max-height: 40px;
+			 border-top-width: 1px;
+		  }
+		}
+	 }
+	 .select__title {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		padding: 20px;
+		border-radius: 10px;
+		
+		cursor: pointer;
+	 
+		&::before,
+		&::after {
+		  content: "";
+		  position: absolute;
+		  top: 50%;
+		  right: 16px;
+		  display: block;
+		  width: 10px;
+		  height: 2px;
+		  transition: all 0.3s ease-out; 
+		  background-color: #333333;
+		  transform: translate(-3px, -50%) rotate(45deg);
+		}
+		&::after {
+		  transform: translate(3px, -50%) rotate(-45deg);
+		}
+	 
+		&:hover {
+		  border-color: $accent;
+		  &::before,
+		  &::after {
+			 background-color: $accent;
+		  }
+		}
+	 }
+	 .select__content {
+		position: absolute;
+		top: 50px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		background-color: #ffffff;
+		border-top: none;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		transition: all 0.3s ease-out;
+		display: none;
+		z-index: 1;
+	 }
+	 .select__input {
+		display: none;
+		&:checked + label {
+		  color: #333;
+		  background-color: $accent;
+		}
+		&:disabled + label {
+		  opacity: 0.6;
+		  pointer-events: none;
+		}
+	 }
+	 .select__label {
+		margin: 0;
+		font-weight: 700;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		max-height: 0;
+		padding: 20px;
+		transition: all 0.2s ease-out;
+		cursor: pointer;
+		overflow: hidden;
+		&:hover {
+		  background-color: $accent !important;
+		}
+	 }
 }
 
 // ? Reviews
@@ -801,7 +957,8 @@ a {
 		margin-bottom: 20px;
 	}
 }
-#politic, #personal {
+#politic,
+#personal {
 	overflow-y: scroll;
 	.modals {
 		top: 0;
@@ -820,7 +977,7 @@ a {
 .thanks__popup {
 	display: none;
 	position: fixed;
-	background-color: rgba(0,0,0, .5);
+	background-color: rgba(0, 0, 0, 0.5);
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -909,11 +1066,20 @@ a {
 			flex-direction: column;
 		}
 	}
-	.now__description::after {
-		width: 431px;
-		height: 480px;
-		right: -120px;
+	.now {
+		&__content {
+			width: 750px;
+		}
+		&__description::after {
+			width: 431px;
+			height: 480px;
+			// right: -180px;
+		}
+		.btn--now {
+			margin-top: 50px;
+		}
 	}
+
 	.form {
 		padding-bottom: 80px;
 		&__author {
@@ -979,20 +1145,20 @@ a {
 			margin: 14px 0;
 		}
 	}
-	.now__content {
-		width: 720px;
-	}
-	.now__description {
-		font-size: 16px;
-		&::after {
-			width: 320px;
-			height: 356px;
-			right: -140px;
-			top: 50%;
+	.now {
+		&__content {
+			width: 650px;
+			margin-top: 60px;
 		}
-	}
-	.now .btn--now {
-		transform: translateX(-30%);
+		&__description {
+			padding: 20px;
+			font-size: 16px;
+			&::after {
+				width: 345px;
+				height: 384px;
+				right: -140px;
+			}
+		}
 	}
 	.heading {
 		&__title {
@@ -1132,7 +1298,7 @@ a {
 					img {
 						width: 600px;
 					}
-			  }
+				}
 			}
 		}
 	}
@@ -1153,31 +1319,20 @@ a {
 		}
 	}
 	.now {
-		padding-top: 40px;
-		padding-bottom: 270px;
+		padding: 40px 0;
 		overflow: hidden;
-	}
-	.now__content {
-		margin-top: 100px;
-	}
-	.now__description {
-		padding: 60px;
-	}
-	.now__description::before {
-		top: -20%;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 200px;
-		height: 119px;
-	}
-	.now__description::after {
-		right: auto;
-		left: 50%;
-		top: 130%;
-		transform: translateX(-50%);
-	}
-	.now .btn--now {
-		transform: translateX(0);
+		&__content {
+			padding: 30px;
+			width: 600px;
+			margin-top: 60px;
+		}
+		&__description {
+			padding: 0;
+			&::after {
+				width: 320px;
+				height: 355px;
+			}
+		}
 	}
 	.heading {
 		&__title {
@@ -1188,7 +1343,7 @@ a {
 		}
 	}
 	.benefits {
-		padding-top: 40px;
+		padding: 40px;
 		&__content {
 			justify-content: start;
 		}
@@ -1243,6 +1398,9 @@ a {
 			bottom: -20%;
 		}
 	}
+	.footer {
+		padding-bottom: 0;
+	}
 	.footer__wrap {
 		.requisites ul li {
 			font-size: 14px;
@@ -1259,6 +1417,9 @@ a {
 			margin: 10px;
 			margin-bottom: 40px;
 			width: 100%;
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 	.modals {
@@ -1279,27 +1440,56 @@ a {
 @media (max-width: 768px) {
 	.main {
 		padding-bottom: 500px !important;
-		.main__content .play {
-			left: 50%;
-			right: auto;
-			transform: translateX(-50%);
-	  }
-		.play__author {
-			z-index: 1;
-			top: 20px!important;
-			left: -180px!important;
-			img {
-				max-width: 600px!important;
+		.main__content {
+			.description {
+				width: 100%;
+				.btn {
+					margin: 0 auto;
+					margin-top: 20px;
+				}
+			}
+			.play {
+				left: 50%;
+				right: auto;
+				transform: translateX(-50%);
+			}
+			.play__author {
+				z-index: 1;
+				top: 20px !important;
+				left: -180px !important;
+				img {
+					max-width: 600px !important;
+				}
 			}
 		}
 	}
-	.now__content {
-		width: 500px;
+	.now {
+		padding-bottom: 380px;
+		position: relative;
+		&__content {
+			margin-top: 30px;
+			width: 420px;
+			transform: translateX(0%);
+		}
+		&__description {
+			&::after {
+				content: none;
+			}
+		}
+		&::after {
+			content: "";
+			display: block;
+			background: url(../images/dest/artem-2.png) center no-repeat;
+			background-size: cover;
+			position: absolute;
+			width: 369px;
+			height: 408px;
+			bottom: -5%;
+			transform: translateX(-50%);
+			left: 50%;
+		}
 	}
-	.now__description {
-		padding: 30px;
-		padding-top: 60px;
-	}
+
 	.problem__content {
 		margin-left: 0;
 	}
@@ -1325,6 +1515,10 @@ a {
 		&__content {
 			flex-wrap: wrap;
 			margin-bottom: 0px;
+		}
+		&__text {
+			font-size: 16px;
+			font-weight: 400;
 		}
 	}
 	.form {
@@ -1372,12 +1566,12 @@ a {
 		top: 10px;
 		width: 30px;
 	}
-	
+
 	.header__wrap--mobile .nav_btn__active .line::before {
 		top: 0;
 	}
 	.header__wrap--mobile .nav_btn__active .line::after {
-		top:0;
+		top: 0;
 	}
 	.social__item {
 		margin: 0 5px;
@@ -1390,42 +1584,41 @@ a {
 		background: url(../images/dest/main-bg-m.jpg) center no-repeat;
 		background-size: cover;
 		padding-bottom: 300px !important;
-		padding-top:45px;
+		padding-top: 45px;
 		&__content {
-			
-	.play {
-		&__wrapp {
-			width: 100px;
-			height: 100px;
-		}
-		&__pulse {
-			width: 100px;
-			height: 100px;
-		}
-		&__btn {
-			width: 100px;
-			height: 100px;
-			background-size: cover;
-		}
-		&__text {
-			font-size: 12px;
-			left: 20px;
-			&::before {
-				width: 16px;
-				height: 68px;
-				top: 23px;
-				left: -25px;
+			.play {
+				&__wrapp {
+					width: 100px;
+					height: 100px;
+				}
+				&__pulse {
+					width: 100px;
+					height: 100px;
+				}
+				&__btn {
+					width: 100px;
+					height: 100px;
+					background-size: cover;
+				}
+				&__text {
+					font-size: 12px;
+					left: 20px;
+					&::before {
+						width: 16px;
+						height: 68px;
+						top: 23px;
+						left: -25px;
+					}
+				}
+				&__author {
+					z-index: 1;
+					top: 20px !important;
+					left: -149px !important;
+					img {
+						max-width: 400px !important;
+					}
+				}
 			}
-		}
-		&__author {
-			z-index: 1;
-			top: 20px!important;
-			left: -149px !important;
-			img {
-				max-width: 400px !important;
-			}
-		}
-	}
 		}
 	}
 	.description {
@@ -1450,26 +1643,23 @@ a {
 			}
 		}
 	}
-	.now__content {
-		width: 300px;
-		padding: 12px;
-	}
-	.now__description {
-		padding: 18px;
-		padding-top: 50px;
-		font-size: 11px;
-		&::before {
-			top: -29%;
-			width: 134px;
-			height: 80px;
+	.now {
+		padding-bottom: 310px;
+		&__content {
+			width: 300px;
+			padding: 12px;
+		}
+		&__description {
+			font-size: 12px;
+		}
+		.now .btn--now {
+			margin-top: 20px;
 		}
 		&::after {
-			width: 260px;
-			height: 289px;
+			width: 300px;
+			height: 330px;
+			bottom: -5%;
 		}
-	}
-	.now .btn--now {
-		margin-top: 20px;
 	}
 	.benefits {
 		background: url(../images/dest/now2-bg-m.jpg) center no-repeat;
@@ -1484,6 +1674,8 @@ a {
 			margin-top: 20px;
 			margin-left: 0;
 			text-align: center;
+			font-size: 14px;
+			font-weight: 700;
 		}
 	}
 	.rate {
@@ -1502,7 +1694,7 @@ a {
 			}
 		}
 	}
-	
+
 	.slick-next,
 	.slick-prev {
 		display: none !important;
@@ -1537,7 +1729,8 @@ a {
 		}
 		&__input {
 			margin-bottom: 20px;
-			padding: 15px;
+			padding: 12px;
+			font-size: 14px;
 		}
 		&__btn {
 			padding: 15px;
@@ -1545,6 +1738,18 @@ a {
 		&__author {
 			bottom: -12%;
 			width: 300px;
+		}
+		.select__content {
+			top: 35px;
+		}
+		.select__title {
+			font-size: 14px;
+			padding: 12px;
+		}
+		.select__label{
+			padding: 12px;
+			font-size: 14px;
+			font-weight: 400;
 		}
 	}
 	.modals {

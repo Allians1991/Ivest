@@ -26,23 +26,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 	/*Ajax*/
-	$('form').submit(function (event) {
-		event.preventDefault();
-		$.ajax({
-			type: "POST",                     /*Метод отправки*/
-			url: "../send.php",          /*Путь к обработчику*/
-			data: $(this).serialize()
-		}).done(function () {
-			$(this).find("input").val("");    /*Очистка формы*/
-			// $('#form').fadeOut();      /*Закрытие формы"*/
-			$('.thanks__popup').fadeIn();    /*Модальное окно спасибо*/
-			$(".form_wrap").trigger("reset");
-		});
-		return false;
-	});
+	// $('form').submit(function (event) {
+	// 	event.preventDefault();
+	// 	$.ajax({
+	// 		type: "POST",                     /*Метод отправки*/
+	// 		url: "../send.php",          /*Путь к обработчику*/
+	// 		data: $(this).serialize()
+	// 	}).done(function () {
+	// 		$(this).find("input").val("");    /*Очистка формы*/
+	// 		// $('#form').fadeOut();      /*Закрытие формы"*/
+	// 		$('.thanks__popup').fadeIn();    /*Модальное окно спасибо*/
+	// 		$(".form_wrap").trigger("reset");
+	// 	});
+	// 	return false;
+	// });
 
-	
-	$(".close__btn").click(function(e) {
+
+	$(".close__btn").click(function (e) {
 		e.preventDefault();
 		$('.thanks__popup').fadeOut();
 	});
@@ -91,41 +91,144 @@ document.addEventListener("DOMContentLoaded", function () {
 	/*END*/
 
 	/*Politic*/
-	$(".politic__link").click(function(e) {
+	$(".politic__link").click(function (e) {
 		e.preventDefault();
 		$('#politic').fadeIn();
-		$('body').css({'overflow-y' : 'hidden'});
+		$('body').css({ 'overflow-y': 'hidden' });
 	});
-	$(".close").click(function(e) {
+	$(".close").click(function (e) {
 		e.preventDefault();
 		$('#politic').fadeOut();
-		$('body').css({'overflow-y' : 'scroll'});
+		$('body').css({ 'overflow-y': 'scroll' });
 	});
-	$(".close2").click(function(e) {
+	$(".close2").click(function (e) {
 		e.preventDefault();
 		$('#politic').fadeOut();
-		$('body').css({'overflow-y' : 'scroll'});
+		$('body').css({ 'overflow-y': 'scroll' });
 	});
-	$(".personal__link").click(function(e) {
+	$(".personal__link").click(function (e) {
 		e.preventDefault();
 		$('#personal').fadeIn();
-		$('body').css({'overflow-y' : 'hidden'});
-		$('#personal').css({'overflow-y' : 'scroll'});
+		$('body').css({ 'overflow-y': 'hidden' });
+		$('#personal').css({ 'overflow-y': 'scroll' });
 	});
-	$(".close").click(function(e) {
+	$(".close").click(function (e) {
 		e.preventDefault();
 		$('#personal').fadeOut();
-		$('body').css({'overflow-y' : 'scroll'});
+		$('body').css({ 'overflow-y': 'scroll' });
 	});
-	$(".close2").click(function(e) {
+	$(".close2").click(function (e) {
 		e.preventDefault();
 		$('#personal').fadeOut();
-		$('body').css({'overflow-y' : 'scroll'});
+		$('body').css({ 'overflow-y': 'scroll' });
 	});
 	// -----------------------------
 
 
+	// Валидация формы
+	const form = document.getElementById('form__send');
+	form.addEventListener('submit', formSend);
+
+	async function formSend(e) {
+		e.preventDefault();
+
+		let error = formValidate(form);
+		let formData = new FormData(form);
+		if (error === 0) {
+			// Отправляем форму
+			let response = await fetch('send.php', {
+				method: 'POST',
+				body: formData
+			});
+			if (response.ok) {
+				$('.thanks__popup').fadeIn();    /*Модальное окно спасибо*/
+				form.reset();
+			}
+		}
+	}
+
+	function formValidate(form) {
+		let error = 0;
+		let formReq = document.querySelectorAll('._req');
+
+		for (let index = 0; index < formReq.length; index++) {
+			const input = formReq[index];
+			formRemoveError(input);
+
+			if (input.classList.contains('_name')) {
+				if (nameTest(input)) {
+					formAddError(input);
+					error++;
+				}
+			} else if (input.classList.contains('_email')) {
+				if (emailTest(input)) {
+					formAddError(input);
+					error++;
+				}
+			} else if (input.classList.contains('_phone')) {
+				if (phoneTest(input)) {
+					formAddError(input);
+					error++;
+				}
+			} else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
+				formAddError(input);
+				error++;
+			} else {
+				if (input.value === '') {
+					formAddError(input);
+					error++;
+				}
+			}
+		}
+		return error;
+	}
+	function formAddError(input) {
+		input.parentElement.classList.add('_error');
+		input.classList.add('_error');
+	}
+	function formRemoveError(input) {
+		input.parentElement.classList.remove('_error');
+		input.classList.remove('_error');
+	}
+	// Функция проверки Email
+	function emailTest(input) {
+		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+	}
+
+	// Проверка телефона
+	function phoneTest(input) {
+		return !/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(input.value);
+	}
+
+	// Проверка Имени
+	function nameTest(input) {
+		return !/^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u.test(input.value);
+	}
+
+
+	// Select 
+	const selectSingle = document.querySelector('.select');
+	const selectSingle_title = selectSingle.querySelector('.select__title');
+	const selectSingle_labels = selectSingle.querySelectorAll('.select__label');
+
+	// Toggle menu
+	selectSingle_title.addEventListener('click', () => {
+		if ('active' === selectSingle.getAttribute('data-state')) {
+			selectSingle.setAttribute('data-state', '');
+		} else {
+			selectSingle.setAttribute('data-state', 'active');
+		}
+	});
+
+	// Close when click to option
+	for (let i = 0; i < selectSingle_labels.length; i++) {
+		selectSingle_labels[i].addEventListener('click', (evt) => {
+			selectSingle_title.textContent = evt.target.textContent;
+			selectSingle.setAttribute('data-state', '');
+		});
+	}
 });
+
 
 
 // AutoPrint
