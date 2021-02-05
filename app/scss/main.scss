@@ -401,7 +401,7 @@ a {
 		border-radius: 31px;
 		max-width: 360px;
 		width: 360px;
-		height: 480px;
+		height: 550px;
 		transition: all 0.2s;
 		.item__title {
 			text-align: center;
@@ -413,7 +413,7 @@ a {
 			flex-wrap: wrap;
 			position: absolute;
 			width: 100%;
-			bottom: 15px;
+			bottom: 20px;
 			left: 50%;
 			transform: translateX(-50%);
 			&--width {
@@ -422,6 +422,45 @@ a {
 			}
 			.price__wrapp {
 				display: flex;
+				flex-direction: column;
+				.radio__price {
+					display: none;
+				}
+
+				.radio__price:checked + .radio__label::after {
+					transform: scale(1);
+				}
+				.radio__label {
+					position: relative;
+					display: flex;
+					align-items: center;
+					cursor: pointer;
+					span {
+						margin-left: 10px;
+					}
+				}
+				.radio__label::before {
+					content: '';
+					display: block;
+					min-width:16px;
+					height: 16px;
+					background-color: #fff;
+					border-radius: 4px;
+					margin-right: 5px;
+				}
+				.radio__label::after {
+					content: '';
+					width: 12px;
+					height: 12px;
+					background-color: $accent;
+					border-radius: 4px;
+					position: absolute;
+					top: 4px;
+					left: 2px;
+					transform: scale(0);
+					transition: all .1s;
+
+				}
 			}
 			&--margin {
 				margin-left: 11px;
@@ -450,6 +489,11 @@ a {
 						transform: translateY(-50%);
 					}
 				}
+			}
+			.rate__pay {
+				padding: 10px 40px;
+				width: auto;
+				margin-top: 10px;
 			}
 		}
 		&:hover {
@@ -481,7 +525,7 @@ a {
 		border-radius: 31px;
 		padding: 21px;
 		padding-top: 40px;
-		height: 437px;
+		height: 507px;
 	}
 
 	&__title {
@@ -992,7 +1036,7 @@ a {
 		font-weight: 700;
 	}
 }
-#popup_form {
+#popup_form, #popup_form2 {
 	.form {
 		background-image: none;
 	}

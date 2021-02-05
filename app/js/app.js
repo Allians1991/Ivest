@@ -25,23 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 
-	/*Ajax*/
-	// $('form').submit(function (event) {
-	// 	event.preventDefault();
-	// 	$.ajax({
-	// 		type: "POST",                     /*Метод отправки*/
-	// 		url: "../send.php",          /*Путь к обработчику*/
-	// 		data: $(this).serialize()
-	// 	}).done(function () {
-	// 		$(this).find("input").val("");    /*Очистка формы*/
-	// 		// $('#form').fadeOut();      /*Закрытие формы"*/
-	// 		$('.thanks__popup').fadeIn();    /*Модальное окно спасибо*/
-	// 		$(".form_wrap").trigger("reset");
-	// 	});
-	// 	return false;
-	// });
-
-
 	$(".close__btn").click(function (e) {
 		e.preventDefault();
 		$('.thanks__popup').fadeOut();
@@ -172,18 +155,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 
-	$("#callForm").click(function (e) {
-		e.preventDefault();
-		$('#popup_form').fadeIn();
-		$('body').css({ 'overflow-y': 'hidden' });
-	});
-	$(".close").click(function (e) {
-		e.preventDefault();
-		$('#popup_form').fadeOut();
-		$('body').css({ 'overflow-y': 'scroll' });
-	});
-	
-
 	// Валидация формы
 	const form = document.getElementById('form__send');
 	form.addEventListener('submit', formSend);
@@ -286,7 +257,22 @@ document.addEventListener("DOMContentLoaded", function () {
 			selectSingle.setAttribute('data-state', '');
 		});
 	}
+
+	
+
 });
+
+// Замена ссылки оплаты
+
+function change1() {
+	let oplata = document.getElementById('robokassa');
+	oplata.href = "https://vk.com/away.php?to=https%3A%2F%2Fauth.robokassa.ru%2FMerchant%2FIndex.aspx%3FMerchantLogin%3Dartemivin.ru%26InvId%3D0%26Culture%3Dru%26Encoding%3Dutf-8%26Description%3DTELEGRAM%25201%2520MONTH%26OutSum%3D1000%26SignatureValue%3D5e14e9791a371b4e929e375b1c427a86&cc_key=";
+}
+
+function change2() {
+	let oplata = document.getElementById('robokassa');
+	oplata.href = "https://vk.com/away.php?to=https%3A%2F%2Fauth.robokassa.ru%2FMerchant%2FIndex.aspx%3FMerchantLogin%3Dartemivin.ru%26InvId%3D0%26Culture%3Dru%26Encoding%3Dutf-8%26Description%3DTELEGRAM%252012%2520MONTHS%26OutSum%3D10000%26SignatureValue%3De7a86534f9183441a9365ff8c18915a8&cc_key=";
+}
 
 
 
