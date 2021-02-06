@@ -620,6 +620,7 @@ a {
 				background-color: #fff;
 				border-radius: 4px;
 				margin-right: 5px;
+				cursor: pointer;
 			}
 			&::after {
 				transition: all 0.1s;
@@ -632,6 +633,7 @@ a {
 				left: 3px;
 				position: absolute;
 				transform: scale(0);
+				cursor: pointer;
 			}
 		}
 	}
@@ -1434,6 +1436,10 @@ a {
 		&__item {
 			margin: 20px;
 			padding: 20px;
+			height: 500px;
+		}
+		.item__wrapp {
+			height: 458px;
 		}
 		.item__title {
 			height: 46px;
@@ -1753,8 +1759,9 @@ a {
 	}
 	.rate {
 		&__item {
-			height: 430px;
+			height: 445px;
 			margin: 20px 0;
+			padding: 10px;
 			.item__title {
 				font-size: 16px;
 				text-transform: uppercase;
@@ -1762,8 +1769,11 @@ a {
 			}
 			.item__wrapp {
 				padding: 10px;
-				padding-top: 40px;
-				height: 387px;
+				padding-top: 15px;
+				height: 422px;
+			}
+			.item__price .rate__pay {
+				padding: 10px 50px;
 			}
 		}
 	}
