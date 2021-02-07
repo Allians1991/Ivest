@@ -1443,6 +1443,12 @@ a {
 		}
 		.nav__item {
 			font-size: 25px;
+			&::after {
+				content: none;
+			}
+			&:hover {
+				opacity: 1;
+			}
 		}
 		.nav__item:first-child {
 			margin-left: 20px;
@@ -1735,6 +1741,10 @@ a {
 	}
 	.rate {
 		padding-top: 20px;
+		.rate__item:hover {
+			transform: scale(1);
+			box-shadow: none;
+		}
 	}
 	.form {
 		padding-top: 0;
