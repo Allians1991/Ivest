@@ -9,6 +9,31 @@ document.addEventListener("DOMContentLoaded", function () {
 		variableWidth: true,
 		dots: true
 	});
+	
+	$('.education__slider').slick({
+		dots: true,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 1,
+		autoplay: true,
+		centerMode: true,
+		variableWidth: true
+	 });
+
+	// Gallery STats
+	$(document).ready(function() {
+		$('.popup-gallery').magnificPopup({
+			delegate: 'a',
+			type: 'image',
+			tLoading: 'Loading image #%curr%...',
+			mainClass: 'mfp-img-mobile',
+			gallery: {
+				enabled: true,
+				navigateByImgClick: true,
+				preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+			}
+		});
+	});
 
 	// Scroll
 	$("[data-scroll]").on("click", function (event) {
@@ -91,18 +116,18 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 	$(".personal__link").click(function (e) {
 		e.preventDefault();
-		$('#personal').fadeIn();
+		$('#personal__popup').fadeIn();
 		$('body').css({ 'overflow-y': 'hidden' });
-		$('#personal').css({ 'overflow-y': 'scroll' });
+		$('#personal__popup').css({ 'overflow-y': 'scroll' });
 	});
 	$(".close").click(function (e) {
 		e.preventDefault();
-		$('#personal').fadeOut();
+		$('#personal__popup').fadeOut();
 		$('body').css({ 'overflow-y': 'scroll' });
 	});
 	$(".close2").click(function (e) {
 		e.preventDefault();
-		$('#personal').fadeOut();
+		$('#personal__popup').fadeOut();
 		$('body').css({ 'overflow-y': 'scroll' });
 	});
 	// -----------------------------
