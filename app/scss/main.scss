@@ -1116,7 +1116,7 @@ a {
 
 /* Thanks popup */
 .thanks__popup {
-	display: none;
+	display: block;
 	position: fixed;
 	background-color: rgba(0, 0, 0, 0.5);
 	top: 0;
@@ -1151,6 +1151,7 @@ a {
 	font-weight: 700;
 	font-size: 26px;
 	margin-bottom: 15px;
+	color: $accent;
 }
 
 .thanks__popup_content .close__btn {
@@ -2035,6 +2036,20 @@ a {
 	}
 	.thanks__popup {
 		width: 100%;
+		.thanks__popup_content {
+			padding-bottom: 20px;
+			width: 300px;
+			span {
+				font-size: 18px;
+			}
+			.close__btn {
+				right: 8px;
+				&::before {
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
 	}
 	.footer__wrap .requisites ul li {
 		font-size: 12px;
