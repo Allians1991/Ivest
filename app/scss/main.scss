@@ -294,6 +294,13 @@ a {
 .slick-prev:before {
 	transform: rotate(180deg);
 }
+.slick-slide {
+	opacity: .5;
+	transition: all 0.5s ease-in-out;
+	img {
+		opacity: 0.1;
+	}
+}
 
 //? Problem
 .problem {
@@ -1116,7 +1123,7 @@ a {
 
 /* Thanks popup */
 .thanks__popup {
-	display: block;
+	display: none;
 	position: fixed;
 	background-color: rgba(0, 0, 0, 0.5);
 	top: 0;
