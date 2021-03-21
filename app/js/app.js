@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	$('.education__slider').slick({
 		dots: true,
 		infinite: true,
-		speed: 300,
+		speed: 600,
 		slidesToShow: 1,
 		autoplay: true,
 		centerMode: true,
